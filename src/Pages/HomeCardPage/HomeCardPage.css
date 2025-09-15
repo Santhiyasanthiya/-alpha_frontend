@@ -1,0 +1,120 @@
+.medi-card_pg {
+  background-color: #f8fafc;
+}
+
+/* Section Title */
+.medi-card_pg_title {
+  margin-top: 20px;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: "Times New Roman", Times, serif;
+  color: #420202;
+}
+
+/* Cards */
+.medi-card_pg_card {
+    background-color: #ffffff;
+     border-top: 5px solid rgb(104, 18, 18);
+  border-radius: 10px;
+  margin-top: 20px;
+  height: 100%;
+  transition: all 0.3s ease;
+box-shadow: rgba(192, 192, 192, 0.56) 0px 22px 70px 4px;
+}
+.medi-card_pg_card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon */
+.medi-card_pg_icon {
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, #5a0101, #e47e7e);
+  border-radius: 15px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: #fff;
+}
+
+/* Card Title */
+.medi-card_pg_card_title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* Card Text */
+.medi-card_pg_card_text {
+  font-size: 0.95rem;
+  color: #290000;
+  margin-top: 40px;
+}
+
+.medi-card_pg_card_button{
+  background-color: #470000;
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  border: none;
+  margin-top: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+
+.medi-popup_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+}
+
+.medi-popup_content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+  animation: popupAnim 0.3s ease;
+}
+
+@keyframes popupAnim {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .medi-card_pg_title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .medi-card_pg {
+    padding: 40px 15px;
+  }
+  .medi-card_pg_title {
+    font-size: 1.4rem;
+  }
+  .medi-card_pg_card {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,104 @@
+/* Container center */
+.medi_register_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+/* Card styling */
+.medi_register_card {
+  max-width: 450px;
+  width: 100%;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #eee;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.medi_register_card h3 {
+  color: #470101;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 600;
+}
+
+/* Labels */
+.medi_register_card .form-label {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Inputs */
+.medi_register_card .form-control {
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+
+.medi_register_card .form-control:focus {
+  border-color: #470101;
+  box-shadow: 0 0 5px rgba(71, 1, 1, 0.4);
+}
+
+/* Submit Button */
+.medi_register_card button {
+  background: #470101;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.3s ease-in-out;
+}
+
+.medi_register_card button:hover {
+  background: #692121;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .medi_register_card {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .medi_register_card h3 {
+    font-size: 1.4rem;
+  }
+
+  .medi_register_card .form-control {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .medi_register_card button {
+    font-size: 0.95rem;
+    padding: 9px;
+  }
+}
+
+@media (max-width: 576px) {
+  .medi_register_container {
+    padding: 10px;
+  }
+
+  .medi_register_card {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .medi_register_card h3 {
+    font-size: 1.2rem;
+  }
+
+  .medi_register_card .form-control {
+    font-size: 0.85rem;
+  }
+
+  .medi_register_card button {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}

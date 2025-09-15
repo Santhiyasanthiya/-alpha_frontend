@@ -1,0 +1,89 @@
+/* Section Background */
+.medi_join_section {
+  background: linear-gradient(135deg, #ffe2e9, #fcc0c0);  color: white;
+  padding: 80px 20px;
+}
+
+/* Title */
+.medi_join_title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #360000;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.medi_join_subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #360000;
+}
+
+/* Buttons */
+.medi_join_btn_primary {
+  background: #ffffff;
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(71, 0, 0);
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-weight: 600;
+  border: none;
+  transition: 0.3s;
+    border: 2px solid #360000;
+}
+
+
+
+.medi_join_btn_secondary {
+  background: transparent;
+  color: white;
+  background-color: #360000;
+    font-family: 'Times New Roman', Times, serif;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+
+
+
+
+/* Animation */
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .medi_join_title {
+    font-size: 2rem;
+  }
+
+  .medi_join_btn_group {
+    flex-direction: column;
+  }
+
+  .medi_join_btn_primary,
+  .medi_join_btn_secondary {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .medi_join_title {
+    font-size: 1.6rem;
+  }
+
+  .medi_join_subtitle {
+    font-size: 1rem;
+  }
+}

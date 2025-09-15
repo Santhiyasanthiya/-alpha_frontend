@@ -1,0 +1,133 @@
+
+/* Header */
+.ask_medi_ques_header {
+  background: linear-gradient(135deg, #ffe2e9, #fcc0c0);
+  border-radius: 20px;
+  margin-top: 20px;
+}
+.ask_medi_ques_header h2 {
+  font-size: 2rem;
+  color: #5c0101;
+}
+.ask_medi_ques_btn {
+  background: #5c0101;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.ask_medi_ques_btn:hover {
+  background: #fff;
+  color: #5c0101;
+}
+
+/* Tabs */
+.ask_medi_ques_topic_tab {
+  cursor: pointer;
+  padding: 8px 16px;
+  margin: 5px;
+  border-radius: 20px;
+  background: #690303;
+  font-weight: 500;
+  color: white;
+  transition: all 0.3s ease;
+}
+.ask_medi_ques_topic_tab.active {
+  background: #fff;
+  border: 1px solid #420101;
+  color: #420101;
+}
+.ask_medi_ques_popular_topic{
+  background: #fff;
+font-family: 'Times New Roman', Times, serif;
+  color: #420101;
+}
+
+/* Cards */
+.ask_medi_ques_card {
+  background: #fff;
+  width: 100%;
+  transition: transform 0.3s;
+}
+.ask_medi_ques_card:hover {
+  transform: translateY(-5px);
+}
+.ask_medi_ques_tag {
+  background: #ffefef;
+  color: #5c0101;
+  font-size: 0.85rem;
+}
+
+/* Modal */
+.ask_medi_ques_modal_header {
+  background: #5c0101;
+  color: white;
+}
+.ask_medi_ques_input,
+.ask_medi_ques_textarea {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+.ask_medi_ques_input:focus,
+.ask_medi_ques_textarea:focus {
+  border: 1px solid #5c0101;
+  outline: none;
+}
+
+.medi_ask_answer_button{
+  background: #5c0101;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.medi_ask_answer_button:hover{
+  background: #fff;
+  color: #5c0101;
+  border: 1px solid #5c0101;
+}
+
+
+.ask_medi_ques_topic_details_box{
+  background-color: rgba(248, 198, 198, 0.288);
+  padding: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .ask_medi_ques_header h2 {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 768px) {
+  .ask_medi_ques_banner img {
+    max-height: 200px;
+  }
+  .ask_medi_ques_header h2 {
+    font-size: 1.4rem;
+  }
+  .ask_medi_ques_btn {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .ask_medi_ques_header {
+    padding: 15px;
+  }
+  .ask_medi_ques_header h2 {
+    font-size: 1.2rem;
+  }
+  .ask_medi_ques_card {
+    padding: 12px;
+  }
+  .ask_medi_ques_btn {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+}

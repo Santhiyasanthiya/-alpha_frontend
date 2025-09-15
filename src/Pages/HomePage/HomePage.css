@@ -1,0 +1,84 @@
+/* Background Gradient */
+.medi_home_pg {
+  min-height: 90vh;
+  background: linear-gradient(135deg, #ffe2e9, #fcc0c0);
+  padding: 60px 20px;
+}
+
+.medi_home_pg_title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.3;
+  font-family: 'Times New Roman', Times, serif;
+  color: #380303;
+}
+
+/* Subtitle */
+.medi_home_pg_subtitle {
+  max-width: 700px;
+  font-size: 1rem;
+  color: #380303;
+}
+
+/* Buttons */
+.medi_home_pg_button_one {
+  background-color: #380303;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+
+.medi_home_pg_button_two{
+  background-color: transparent;
+  border: 2px solid #380303;
+  color: #240101;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 10px;
+    text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+
+/* Highlights */
+.medi_home_pg_highlights {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: #000000;
+}
+.medi_home_pg_icon {
+  font-size: 1rem;
+  color: #22c55e;
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .medi_home_pg_title {
+    font-size: 1.8rem;
+  }
+  .medi_home_pg_subtitle {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .medi_home_pg {
+    padding: 40px 15px;
+  }
+  .medi_home_pg_title {
+    font-size: 1.6rem;
+  }
+  .medi_home_pg_btn_primary,
+  .medi_home_pg_btn_secondary {
+    width: 100%;
+    padding: 10px;
+  }
+  .medi_home_pg_highlights {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

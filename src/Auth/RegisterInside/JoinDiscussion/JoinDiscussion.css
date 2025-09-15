@@ -1,0 +1,150 @@
+/* Container */
+.medi_discus_container {
+  margin-top: 20px;
+  height: 100vh;
+  padding: 10px;
+}
+
+/* Card styling */
+.medi_discus_card {
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 20px;
+}
+
+/* Heading */
+.medi_discus_title {
+  font-size: 2rem;
+  color: #470101;
+  font-weight: 600;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 5px;
+}
+
+/* Subtitle */
+.medi_discus_subtitle {
+  color: #470101;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+/* Textarea */
+.medi_discus_textarea {
+  resize: none;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+/* File Input */
+.medi_discus_fileInput {
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 0.95rem;
+}
+
+/* Buttons alignment */
+.medi_discus_btnGroup {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Post card */
+.medi_discus_postCard {
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+ 
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Post text */
+.medi_discus_postText {
+  margin: 0;
+  font-size: 1rem;
+  color: #2c0000;
+}
+
+/* Post Image */
+.medi_discus_postImage {
+  display: flex;
+  flex-direction: row;
+  max-width:150px;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Like section */
+.medi_discus_likeSection {
+  margin-top: 10px;
+}
+
+.medi_discus_likeBtn {
+  font-size: 0.9rem;
+  border-radius: 20px;
+  padding: 5px 15px;
+  transition: all 0.3s ease;
+}
+
+.medi_discus_likeBtn:hover {
+  background: #fff;
+  color: #470101;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .medi_discus_card {
+    padding: 15px;
+  }
+
+  .medi_discus_title {
+    font-size: 1rem;
+  }
+
+  .medi_discus_textarea {
+    font-size: 0.9rem;
+  }
+
+  .medi_discus_postText {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .medi_discus_btnGroup {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .medi_discus_btnGroup .btn {
+    width: 100%;
+  }
+
+  .medi_discus_postImage {
+    border-radius: 8px;
+  }
+}

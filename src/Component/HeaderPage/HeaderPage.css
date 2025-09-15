@@ -1,0 +1,91 @@
+.medi_head_header {
+  background-color: #e6e6e694;
+  position: sticky;
+  top: 0;
+  height: 75px;
+  z-index: 1000;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.medi_head_logoimg {
+  width: 140px;
+  height: 60px;
+  margin-top: -7px;
+  margin-left: 20px;
+}
+
+.medi_head_link {
+  text-decoration: none;
+  color: #300000;
+  font-weight: 500;
+  padding: 20px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 800;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.medi_head_menu_btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.medi_head_mobile_nav {
+  background-color: #420202;
+  font-size: 20px;
+  width: 200px;
+  margin-top: 10px;
+  margin-left: 190px;
+  align-items: center;
+  padding: 10px;
+  z-index: 999;
+  border: 1px solid #ccc;
+}
+.medi_head_link_about {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  padding: 10px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 600;
+  font-size: 18px;
+  transition: color 0.3s ease;
+   border: 2px solid #ccc;
+}
+/* Username styling */
+.medi_head_user {
+  color: #470101;
+  font-size: 1rem;
+}
+
+/* Logout icon (mobile) */
+.medi_head_logout_icon {
+   border: 1px solid #ccc;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.medi_head_logout_icon:hover {
+  transform: scale(1.1);
+}
+.medi_head_user {
+  color: #470101;
+  font-size: 1rem;
+}
+
+/* Logout icon (mobile only) */
+.medi_head_logout_icon {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.medi_head_logout_icon:hover {
+  transform: scale(1.1);
+}

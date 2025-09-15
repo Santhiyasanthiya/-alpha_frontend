@@ -1,0 +1,130 @@
+/* Section */
+.medi_customer_section {
+  background: #f8fbff;
+}
+
+/* Title */
+.medi_customer_title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #410202;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.medi_customer_subtitle {
+  font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+  color: #555;
+}
+
+/* Cards */
+.medi_customer_card {
+  background: #fff;
+  border-radius: 12px;
+  border-top:5px solid rgb(71, 3, 3);
+  padding: 20px;
+  transition: transform 0.3s ease;
+
+}
+
+.medi_customer_card:hover {
+  transform: translateY(-5px);
+}
+
+/* Stars */
+.medi_customer_stars {
+  color: #ffb400;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  display: inline-block;
+  animation: starJump 1s infinite ease-in-out;
+}
+
+/* Keyframes for jumping effect */
+@keyframes starJump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-8px); /* jump up */
+  }
+  60% {
+    transform: translateY(4px);  /* small bounce down */
+  }
+}
+
+.medi_customer_stars span {
+  display: inline-block;
+  animation: starJump 1s infinite ease-in-out;
+}
+
+.medi_customer_stars span:nth-child(1) {
+  animation-delay: 0s;
+}
+.medi_customer_stars span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.medi_customer_stars span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.medi_customer_stars span:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.medi_customer_stars span:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+/* Feedback */
+.medi_customer_feedback {
+  font-style: italic;
+  color: #1d0000;
+  
+  min-height: 80px;
+}
+
+/* Avatar */
+.medi_customer_avatar {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #3a0101, #fe4f4f);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+/* Role */
+.medi_customer_role {
+  font-size: 0.9rem;
+  color: #3b0000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .medi_customer_title {
+    font-size: 1.6rem;
+  }
+  .medi_customer_feedback {
+    font-size: 0.95rem;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .medi_customer_title {
+    font-size: 1.3rem;
+  }
+  .medi_customer_subtitle {
+    font-size: 0.9rem;
+  }
+  .medi_customer_card {
+    padding: 15px;
+  }
+  .medi_customer_avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+}

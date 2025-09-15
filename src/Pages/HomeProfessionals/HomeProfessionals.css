@@ -1,0 +1,74 @@
+/* Section Background */
+.medi_proff_section {
+ background: linear-gradient(135deg, #ffe2e9, #fcc0c0);  color: white;
+  color: #410101;
+  height: 60vh;
+}
+
+/* Title */
+.medi_proff_title {
+      font-family: 'Times New Roman', Times, serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.medi_proff_subtitle {
+  font-size: 1rem;
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 0.9;
+}
+
+/* Stat Cards */
+.medi_proff_card {
+  background: rgb(70, 0, 0);
+  border-radius: 15px;
+  color: white;
+  padding: 25px 15px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.medi_proff_card:hover {
+      background: rgb(70, 0, 0);
+  border-radius: 15px;
+  color: white;
+  transform: translateY(-5px);
+
+}
+
+.medi_proff_number {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.medi_proff_label {
+  font-size: 0.95rem;
+  font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .medi_proff_title {
+    font-size: 1.6rem;
+  }
+  .medi_proff_number {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .medi_proff_title {
+    font-size: 1.3rem;
+  }
+  .medi_proff_card {
+    padding: 18px 10px;
+  }
+  .medi_proff_number {
+    font-size: 1.3rem;
+  }
+  .medi_proff_label {
+    font-size: 0.8rem;
+  }
+}

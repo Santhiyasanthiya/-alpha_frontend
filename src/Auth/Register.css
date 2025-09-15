@@ -1,0 +1,99 @@
+
+.medi_regis_section {
+  background: linear-gradient(135deg, #ffe2e9, #fcc0c0);  color: white;
+  display: flex;
+}
+
+/* ==== Top Stats ==== */
+.medi_regis_stat {
+background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+.medi_regis_stat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+.medi_regis_icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #380000;
+}
+.medi_regis_stat_title {
+font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+  color: #380101;
+}
+.medi_regis_stat_value {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0;
+  color: #3a0000;
+}
+
+/* ==== Action Cards ==== */
+.medi_regis_card {
+background-color: white;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.medi_regis_card_icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: #000000;
+}
+.medi_regis_card_title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #360000;
+}
+.medi_regis_card_text {
+  font-size: 0.95rem;
+  color: #350000;
+}
+
+/* ==== Bottom Boxes ==== */
+.medi_regis_box {
+background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.medi_regis_box_title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #350000;
+}
+.medi_regis_box_text {
+  font-size: 0.9rem;
+  color: #310000;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 992px) {
+  .medi_regis_stat,
+  .medi_regis_card,
+  .medi_regis_box {
+    padding: 18px;
+  }
+  .medi_regis_card_icon {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 576px) {
+  .medi_regis_stat,
+  .medi_regis_card,
+  .medi_regis_box {
+    padding: 15px;
+  }
+  .medi_regis_stat_value {
+    font-size: 1.1rem;
+  }
+}

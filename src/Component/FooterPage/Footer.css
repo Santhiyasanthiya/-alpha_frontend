@@ -1,0 +1,59 @@
+.medi_foot_footer {
+  color: white;
+  background: url("https://i.pinimg.com/originals/10/8f/45/108f45667a1697f88b70acbdd2d263ab.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.medi_foot_title {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.medi_foot_subtitle {
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.medi_foot_text {
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+.medi_foot_head {
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.medi_foot_list li {
+  margin-bottom: 8px;
+}
+
+.medi_foot_link {
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.medi_foot_link:hover {
+  color: #ffb400;
+}
+
+.medi_foot_copy {
+  color: #ffffff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .medi_foot_about {
+    text-align: center;
+  }
+
+  .medi_foot_col {
+    text-align: center;
+  }
+
+  .medi_foot_copy {
+    font-size: 0.8rem;
+  }
+}
