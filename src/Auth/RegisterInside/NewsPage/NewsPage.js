@@ -3,8 +3,9 @@ import "./NewsPage.css";
 
 const NewsPage = () => {
   const carouselImages = [
-    "https://harmony.solutions/wp-content/uploads/2020/02/shutterstock_391285942.jpg",
-    "https://americancareercollege.edu/pulse_images/lg/pulse_35_Medical-Coding.jpg",
+    "https://www.arizonacollege.edu/wp-content/uploads/2023/02/How-to-Become-a-certified-medical-biller-and-coder-in-Arizona.jph_.jpg",
+    "https://cdn.ttgtmedia.com/rms/onlineimages/medical%20revenue_g1345347757.jpg",
+    "https://lexicode.com/wp-content/uploads/2025/06/How-Data-Analytics-in-Healthcare-Aids-Medical-Coding.jpg"
   ];
 
   const newsData = [

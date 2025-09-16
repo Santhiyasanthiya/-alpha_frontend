@@ -27,7 +27,7 @@ const MediLogin = () => {
     onSubmit: async (values, { setSubmitting, setErrors }) => {
   // inside onSubmit:
 try {
-  const res = await axios.post("http://localhost:4000/login", values);
+  const res = await axios.post("https://alpha-backend-lake.vercel.app/login", values);
   if (res.status === 200) {
     localStorage.setItem("zuppaToken", res.data.zuppa);
     localStorage.setItem("username", res.data.username);
@@ -99,7 +99,7 @@ try {
 
         <p className="text-center mt-3">
           Don’t have an account?{" "}
-          <Link to="/register" className="text-decoration-none">
+          <Link to="/alpha_register" className="text-decoration-none">
             Register here
           </Link>
         </p>

@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Left Section */}
           <div className="col-lg-4 col-md-6 medi_foot_about">
             <h5 className="fw-bold medi_foot_title">
-              <i className="bi bi-stethoscope me-2"></i>
+              <i className="bi bi-stethoscope"></i>
               AlphainGen Medical Coding <br /> And Billing Center
             </h5>
             <p className="small medi_foot_subtitle">
@@ -44,22 +44,13 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Support */}
-          {/* <div className="col-lg-3 col-md-6 medi_foot_col">
-            <h6 className="fw-bold medi_foot_head">Support</h6>
-            <ul className="list-unstyled medi_foot_list">
-              <li><a href="#" className="medi_foot_link">Help Center</a></li>
-              <li><a href="#" className="medi_foot_link">Contact Us</a></li>
-              <li><a href="#" className="medi_foot_link">Privacy Policy</a></li>
-              <li><a href="#" className="medi_foot_link">Terms of Service</a></li>
-            </ul>
-          </div> */}
+    
         </div>
 
         <hr className="border-light my-4" />
 
         <div className="text-center small medi_foot_copy">
-          © 2024 MedCode Hub. All rights reserved. | Advancing Medical Coding Excellence
+          © 2024 AlphainGen. All rights reserved. | Advancing Medical Coding Excellence
         </div>
       </div>
     </footer>

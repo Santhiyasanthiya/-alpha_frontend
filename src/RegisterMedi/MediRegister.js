@@ -26,7 +26,7 @@ const MediRegister = () => {
     }),
     onSubmit: async (values, { setSubmitting, setErrors, resetForm }) => {
    try {
-  const res = await axios.post("http://localhost:4000/signup", values);
+  const res = await axios.post("https://alpha-backend-lake.vercel.app/signup", values);
   if (res.data.statusCode === 200) {
     toast.success(res.data.message);
     setUsername(values.username);

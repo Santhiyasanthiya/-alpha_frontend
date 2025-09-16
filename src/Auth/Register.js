@@ -15,7 +15,7 @@ const Register = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const res = await axios.get("https://alpha-backend-lake.vercel.app/questions");
+     const res = await axios.get("https://alpha-backend-lake.vercel.app/questions");
         const allQuestions = res.data;
 
         // ✅ Total count
@@ -47,7 +47,7 @@ const Register = () => {
             <div className="medi_regis_stat shadow-sm">
               <div className="medi_regis_icon">❓</div>
               <h4 className="medi_regis_stat_title">Total Questions</h4>
-              <p className="medi_regis_stat_value">{totalQuestions}</p> </div>
+              <p className="medi_regis_stat_value text-center">{totalQuestions}</p> </div>
           </div>
           <div className="col-6 col-lg-3">
             <div className="medi_regis_stat shadow-sm">
@@ -125,7 +125,7 @@ const Register = () => {
           <div className="col-md-6 col-lg-4">
             <div className="medi_regis_box h-100 shadow-sm">
               <h4 className="medi_regis_box_title">❓ Recent Questions</h4>
-              <p className="medi_regis_box_text">
+              <p className="medi_regis_box_text text-center">
                 {recentCount > 0 ? recentCount : "No recent questions"}
               </p>
             </div>

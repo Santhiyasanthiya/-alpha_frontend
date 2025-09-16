@@ -24,7 +24,7 @@ const handlePostQuestion = async () => {
   if (!newTitle.trim() || !newContent.trim()) return;
 
   try {
-    const res = await axios.post("http://localhost:4000/questions", {
+    const res = await axios.post("https://alpha-backend-lake.vercel.app/questions", {
       title: newTitle,
       content: newContent,
       topic: newTopic,   // ✅ save based on dropdown selection
@@ -47,7 +47,7 @@ const handlePostQuestion = async () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const res = await axios.get("http://localhost:4000/questions");
+        const res = await axios.get("https://alpha-backend-lake.vercel.app/questions");
         setQuestions(res.data);
       } catch (err) {
         console.error(err);
@@ -144,7 +144,7 @@ const handlePostQuestion = async () => {
                   if (!replyText.trim()) return;
                   try {
                     await axios.put(
-                      `http://localhost:4000/questions/${item._id}/reply`,
+                      `https://alpha-backend-lake.vercel.app/questions/${item._id}/reply`,
                       {
                         text: replyText,
                         author: "You",

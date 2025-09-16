@@ -34,7 +34,7 @@ const HeaderPage = () => {
 
         {username ? (
           <div className="d-flex align-items-center gap-3">
-            <span className="medi_head_user fw-bold">{username}</span>
+            <span className="medi_head_user fw-bold" onClick={()=>navigate("/signin")}>{username}</span>
             
             {/* Desktop Logout Icon */}
             <img
