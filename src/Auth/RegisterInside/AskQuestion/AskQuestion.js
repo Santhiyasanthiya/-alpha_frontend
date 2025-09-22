@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Modal, Button, Form } from "react-bootstrap";
+import { Modal, Button, Form, Card } from "react-bootstrap";
 import axios from "axios";
 import "./AskQuestion.css";
 
@@ -8,46 +8,48 @@ const AskQuestion = () => {
   const [activeTopic, setActiveTopic] = useState("ICD-10-CM");
   const [questions, setQuestions] = useState([]);
   const [replyText, setReplyText] = useState("");
-const [answeringIndex, setAnsweringIndex] = useState(null);
+  const [answeringIndex, setAnsweringIndex] = useState(null);
 
   // Form inputs
   const [newTitle, setNewTitle] = useState("");
   const [newContent, setNewContent] = useState("");
-
   const [newTopic, setNewTopic] = useState("ICD-10-CM");
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   // ✅ Submit new question
-const handlePostQuestion = async () => {
-  if (!newTitle.trim() || !newContent.trim()) return;
+  const handlePostQuestion = async () => {
+    if (!newTitle.trim() || !newContent.trim()) return;
 
-  try {
-    const res = await axios.post("https://alpha-backend-lake.vercel.app/questions", {
-      title: newTitle,
-      content: newContent,
-      topic: newTopic,   // ✅ save based on dropdown selection
-    });
+    try {
+      const res = await axios.post(
+        "https://alpha-backend-lake.vercel.app/questions",
+        {
+          title: newTitle,
+          content: newContent,
+          topic: newTopic,
+        }
+      );
 
-    setQuestions((prev) => [res.data.question, ...prev]);
+      setQuestions((prev) => [res.data.question, ...prev]);
 
-    setNewTitle("");
-    setNewContent("");
-    setNewTopic("ICD-10-CM");
-    setShow(false);
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-
+      setNewTitle("");
+      setNewContent("");
+      setNewTopic("ICD-10-CM");
+      setShow(false);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   // ✅ Fetch all questions
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const res = await axios.get("https://alpha-backend-lake.vercel.app/questions");
+        const res = await axios.get(
+          "https://alpha-backend-lake.vercel.app/questions"
+        );
         setQuestions(res.data);
       } catch (err) {
         console.error(err);
@@ -102,115 +104,121 @@ const handlePostQuestion = async () => {
           ))}
         </div>
 
-        {/* Topic Details inside red border box */}
-<div
-  className="ask_medi_ques_topic_details_box"
+        {/* Topic Details */}
+        <div className="ask_medi_ques_topic_details_box">
+          {questions.filter((q) => q.topic === activeTopic).length === 0 ? (
+            <p className="text-center text-muted fw-semibold py-3">
+              No more questions in this topic 🚫
+            </p>
+          ) : (
+            questions
+              .filter((q) => q.topic === activeTopic)
+              .map((item, index) => (
+                <Card
+                  key={index}
+                  className="mb-3 shadow-sm ask_medi_ques_card p-3"
+                >
+                  <Card.Body>
+                    <h5 className="fw-bold text-dark">{item.title}</h5>
+                    <p className="text-secondary">{item.content}</p>
+                    <small className="text-muted d-block mb-2">
+                      📅 {new Date(item.date).toLocaleString()} | 🏷️{" "}
+                      {item.topic}
+                    </small>
 
->
-  {questions
-    .filter((q) => q.topic === activeTopic)
-    .map((item, index) => (
-      <div key={index} style={{ marginBottom: "20px" }}>
-        <p><strong>Title:</strong> {item.title}</p>
-        <p><strong>Content:</strong> {item.content}</p>
-        <p><strong>Date:</strong> {new Date(item.date).toLocaleString()}</p>
-        <p><strong>Topic:</strong> {item.topic}</p>
-        <p><strong>Replies:</strong> {item.replies.length} answers</p>
+                    <p className="fw-semibold">
+                      Replies: {item.replies.length} answers
+                    </p>
 
-        {/* ✅ Reply Button */}
-        <Button
-          size="sm"
-          variant="outline-primary"
-          onClick={() => setAnsweringIndex(index)}
-        >
-          Reply
-        </Button>
+                    {/* ✅ Reply Button */}
+                    <Button
+                      size="sm"
+                      variant="outline-primary"
+                      onClick={() => setAnsweringIndex(index)}
+                    >
+                      Reply
+                    </Button>
 
-        {/* ✅ Reply Input */}
-        {answeringIndex === index && (
-          <div style={{ marginTop: "10px" }}>
-            <Form.Control
-              as="textarea"
-              rows={2}
-              placeholder="Enter your answer..."
-              value={replyText}
-              onChange={(e) => setReplyText(e.target.value)}
-            />
-            <div className="mt-2">
-              <Button
-                size="sm"
-                variant="success"
-                onClick={async () => {
-                  if (!replyText.trim()) return;
-                  try {
-                    await axios.put(
-                      `https://alpha-backend-lake.vercel.app/questions/${item._id}/reply`,
-                      {
-                        text: replyText,
-                        author: "You",
-                      }
-                    );
+                    {/* ✅ Reply Input */}
+                    {answeringIndex === index && (
+                      <div style={{ marginTop: "10px" }}>
+                        <Form.Control
+                          as="textarea"
+                          rows={2}
+                          placeholder="Enter your answer..."
+                          value={replyText}
+                          onChange={(e) => setReplyText(e.target.value)}
+                        />
+                        <div className="mt-2 d-flex gap-2">
+                          <Button
+                            size="sm"
+                            variant="success"
+                            onClick={async () => {
+                              if (!replyText.trim()) return;
+                              try {
+                                await axios.put(
+                                  `https://alpha-backend-lake.vercel.app/questions/${item._id}/reply`,
+                                  {
+                                    text: replyText,
+                                    author: "You",
+                                  }
+                                );
 
-                    // ✅ Update UI replies
-                    const updatedQuestions = [...questions];
-                    updatedQuestions[index].replies.push({
-                      text: replyText,
-                      author: "You",
-                      date: new Date(),
-                    });
-                    setQuestions(updatedQuestions);
+                                const updatedQuestions = [...questions];
+                                updatedQuestions[index].replies.push({
+                                  text: replyText,
+                                  author: "You",
+                                  date: new Date(),
+                                });
+                                setQuestions(updatedQuestions);
 
-                    setReplyText("");
-                    setAnsweringIndex(null);
-                  } catch (err) {
-                    console.error(err);
-                  }
-                }}
-              >
-                Post
-              </Button>{" "}
-              <Button
-                size="sm"
-                variant="secondary"
-                onClick={() => {
-                  setReplyText("");
-                  setAnsweringIndex(null);
-                }}
-              >
-                Cancel
-              </Button>
-            </div>
-          </div>
-        )}
+                                setReplyText("");
+                                setAnsweringIndex(null);
+                              } catch (err) {
+                                console.error(err);
+                              }
+                            }}
+                          >
+                            Post
+                          </Button>
+                          <Button
+                            size="sm"
+                            variant="secondary"
+                            onClick={() => {
+                              setReplyText("");
+                              setAnsweringIndex(null);
+                            }}
+                          >
+                            Cancel
+                          </Button>
+                        </div>
+                      </div>
+                    )}
 
-        {/* ✅ Replies List */}
-        {item.replies.length > 0 && (
-          <div style={{ marginTop: "10px", paddingLeft: "15px" }}>
-            <h6>Replies:</h6>
-            {item.replies.map((rep, rIndex) => (
-              <div
-                key={rIndex}
-                style={{
-                  borderLeft: "2px solid #ccc",
-                  marginBottom: "8px",
-                  paddingLeft: "10px",
-                }}
-              >
-                <p style={{ margin: 0 }}>{rep.text}</p>
-                <small className="text-muted">
-                  👤 {rep.author} | 📅 {new Date(rep.date).toLocaleString()}
-                </small>
-              </div>
-            ))}
-          </div>
-        )}
-        <hr />
-      </div>
-    ))}
-</div>
-
-
-
+                    {/* ✅ Replies List */}
+                    {item.replies.length > 0 && (
+                      <div className="mt-3">
+                        <h6 className="fw-bold">Replies:</h6>
+                        {item.replies.map((rep, rIndex) => (
+                          <div
+                            key={rIndex}
+                            className="p-2 mb-2 rounded"
+                            style={{ background: "#f9f9f9" }}
+                          >
+                            <p className="mb-1">{rep.text}</p>
+                            <small className="text-muted">
+                              👤 {rep.author} | 📅{" "}
+                              {new Date(rep.date).toLocaleString()}
+                            </small>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </Card.Body>
+                </Card>
+              ))
+          )}
+        </div>
       </div>
 
       {/* Modal Popup */}

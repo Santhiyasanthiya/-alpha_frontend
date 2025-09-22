@@ -6,7 +6,7 @@ import './HeaderPage.css';
 const HeaderPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { username, setUsername } = useContext(UserContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
@@ -14,7 +14,7 @@ const HeaderPage = () => {
   const handleLogout = () => {
     setUsername(""); 
     closeMenu();
-    navigate("/")
+    navigate("/");
   };
 
   return (
@@ -32,33 +32,34 @@ const HeaderPage = () => {
           </Link>
         </div>
 
+        {/* Desktop view */}
         {username ? (
-          <div className="d-flex align-items-center gap-3">
-            <span className="medi_head_user fw-bold" onClick={()=>navigate("/signin")}>{username}</span>
-            
-            {/* Desktop Logout Icon */}
+          <div className="d-flex  d-none d-md-flex">
+            <span className="medi_head_user fw-bold" onClick={() => navigate("/signin")}>{username}</span>
             <img
-              src="https://cdn-icons-png.flaticon.com/512/1828/1828490.png"
+              src="https://res.cloudinary.com/dk50cmtps/image/upload/v1758538923/logout_4034229_sstdnl.png"
               alt="Logout"
-              className="medi_head_logout_icon d-none d-md-block"
+              className="cursor-pointer"
               onClick={handleLogout}
-              style={{ cursor: "pointer", width: "28px", height: "28px" }}
+              style={{ width: "28px", height: "28px", marginLeft: "15px",}}
             />
           </div>
         ) : (
-          // Sign In only if not logged in (desktop only)
-          <Link to="/alpha_register" className="medi_head_link d-none d-md-block">
+          <Link to="/alpha_register" className="d-none d-md-block">
             Sign In
           </Link>
         )}
-       
-        {/* Mobile Menu Button */}
-        <div className="medi_head_mobile_menu d-md-none">
-          <button className="medi_head_menu_btn" onClick={toggleMenu}>☰</button>
-        </div>
+
+        {/* Mobile view username on right */}
+       <div className="d-flex d-md-none align-items-center gap-2">
+  {username && (
+    <span className="medi_head_user fw-bold">{username}</span>
+  )}
+  <button className="medi_head_menu_btn" onClick={toggleMenu}>☰</button>
+</div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation Menu */}
       {isMenuOpen && (
         <div className="medi_head_mobile_nav d-md-none text-center py-2">
           <Link 
@@ -69,18 +70,20 @@ const HeaderPage = () => {
             About
           </Link>
 
-          {username ? (
+          {/* Only Logout text on mobile menu */}
+          {username && (
             <div className="mt-2">
-              {/* Mobile Logout Icon */}
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/1828/1828490.png"
-                alt="Logout"
-                className="medi_head_logout_icon"
+              <span
+                className="medi_head_logout_text"
                 onClick={handleLogout}
-                style={{ cursor: "pointer", width: "32px", height: "32px" }}
-              />
+                style={{ cursor: "pointer", color: "#ff4d4f", fontWeight: "bold" }}
+              >
+                Logout
+              </span>
             </div>
-          ) : (
+          )}
+          
+          {!username && (
             <Link 
               to="/alpha_register" 
               className="medi_head_link_about d-block py-1"

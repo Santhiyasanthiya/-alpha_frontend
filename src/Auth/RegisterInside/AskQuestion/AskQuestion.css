@@ -1,5 +1,4 @@
 
-/* Header */
 .ask_medi_ques_header {
   background: linear-gradient(135deg, #ffe2e9, #fcc0c0);
   border-radius: 20px;
@@ -37,9 +36,9 @@
   border: 1px solid #420101;
   color: #420101;
 }
-.ask_medi_ques_popular_topic{
+.ask_medi_ques_popular_topic {
   background: #fff;
-font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   color: #420101;
 }
 
@@ -75,7 +74,7 @@ font-family: 'Times New Roman', Times, serif;
   outline: none;
 }
 
-.medi_ask_answer_button{
+.medi_ask_answer_button {
   background: #5c0101;
   border: none;
   color: white;
@@ -84,19 +83,20 @@ font-family: 'Times New Roman', Times, serif;
   font-weight: 500;
 }
 
-.medi_ask_answer_button:hover{
+.medi_ask_answer_button:hover {
   background: #fff;
   color: #5c0101;
   border: 1px solid #5c0101;
 }
 
-
-.ask_medi_ques_topic_details_box{
+.ask_medi_ques_topic_details_box {
   background-color: rgba(248, 198, 198, 0.288);
   padding: 10px;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 18px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 /* Responsive */

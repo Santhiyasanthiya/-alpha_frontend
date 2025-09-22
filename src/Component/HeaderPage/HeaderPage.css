@@ -34,7 +34,7 @@
 }
 
 .medi_head_mobile_nav {
-  background-color: #420202;
+ background-color: rgb(255, 192, 192);
   font-size: 20px;
   width: 200px;
   margin-top: 10px;
@@ -42,18 +42,23 @@
   align-items: center;
   padding: 10px;
   z-index: 999;
-  border: 1px solid #ccc;
+
+}
+.medi_head_logout_text{
+  cursor: pointer;
+  color: #ff4d4f;
+  font-weight: bold;
 }
 .medi_head_link_about {
   text-decoration: none;
-  color: white;
+  color: rgb(44, 1, 1);
   font-weight: 500;
   padding: 10px;
   font-family: "Times New Roman", Times, serif;
   font-weight: 600;
   font-size: 18px;
   transition: color 0.3s ease;
-   border: 2px solid #ccc;
+
 }
 /* Username styling */
 .medi_head_user {
@@ -88,4 +93,25 @@
 
 .medi_head_logout_icon:hover {
   transform: scale(1.1);
+}
+/* Small screens: 330px to 767px */
+@media (max-width: 767px) {
+  .medi_head_container {
+    display: flex;
+    justify-content: space-between; /* logo left, username+menu right */
+    align-items: center;
+    padding: 10px 15px;
+  }
+
+  .medi_head_user {
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .medi_head_menu_btn {
+    font-size: 28px;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
 }
