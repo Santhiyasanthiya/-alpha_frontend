@@ -31,7 +31,7 @@ const App = () => {
         <Route path="/ask_question" element={<AskQuestion />} />
         <Route path="/community" element={<JoinDiscussion />} />
         <Route path="/news_event" element={<NewsPage />} />
-        <Route path="/Guidelines_page" element={<Guidelines />} />
+        <Route path="/guidelines_page" element={<Guidelines />} />
       </Routes>
 
       {/* ✅ ToastContainer OUTSIDE Routes */}

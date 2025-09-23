@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
 import axios from "axios";
+import Footer from "../Component/FooterPage/Footer";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -39,6 +40,7 @@ const Register = () => {
 
 
   return (
+<>
     <section className="medi_regis_section py-5">
       <div className="container">
         {/* ==== Top Stats ==== */}
@@ -110,7 +112,7 @@ const Register = () => {
             </div>
           </div>
           <div className="col-md-6 col-lg-3" >
-            <div className="medi_regis_card h-100 shadow-sm"  onClick={() => navigate("/Guidelines_page")}>
+            <div className="medi_regis_card h-100 shadow-sm"  onClick={() => navigate("/guidelines_page")}>
               <div className="medi_regis_card_icon">📘</div>
               <h5 className="medi_regis_card_title">Browse Guidelines</h5>
               <p className="medi_regis_card_text">
@@ -121,7 +123,7 @@ const Register = () => {
         </div>
 
         {/* ==== Bottom Section ==== */}
-           <div className="row g-4">
+           {/* <div className="row g-4">
           <div className="col-md-6 col-lg-4">
             <div className="medi_regis_box h-100 shadow-sm">
               <h4 className="medi_regis_box_title">❓ Recent Questions</h4>
@@ -129,14 +131,14 @@ const Register = () => {
                 {recentCount > 0 ? recentCount : "No recent questions"}
               </p>
             </div>
-          </div>
+          </div> */}
 
-          <div className="col-md-6 col-lg-4">
+          {/* <div className="col-md-6 col-lg-4">
             <div className="medi_regis_box h-100 shadow-sm">
               <h4 className="medi_regis_box_title">💬 Community Posts</h4>
               <p className="medi_regis_box_text">No recent posts</p>
             </div>
-          </div>
+          </div> */}
 
           {/* <div className="col-md-12 col-lg-4">
             <div className="medi_regis_box h-100 shadow-sm">
@@ -144,10 +146,12 @@ const Register = () => {
               <p className="medi_regis_box_text">No recent news</p>
             </div>
           </div> */}
-        </div>
+        {/* </div> */}
       </div>
- 
+
     </section>
+ <Footer/>
+</>
   );
 };
 

@@ -1,8 +1,10 @@
 import React from 'react';
 import './About.css';
+import Footer from '../../Component/FooterPage/Footer';
 
 const About = () => {
   return (
+<>
     <section id="about" className="medi_about_section py-5">
       <div className="container">
         <div className="row align-items-center">
@@ -36,6 +38,8 @@ const About = () => {
         </div>
       </div>
     </section>
+<Footer/>
+</>
   );
 };
 

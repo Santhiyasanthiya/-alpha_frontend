@@ -1,124 +1,162 @@
-
-/* Header */
-.medi_Guide_ques_header {
-  background: linear-gradient(135deg, #ffe2e9, #fcc0c0);
-  border-radius: 20px;
-  margin-top: 20px;
-}
-.medi_Guide_ques_header h2 {
-  font-size: 2rem;
-  color: #5c0101;
-}
-.medi_Guide_ques_btn {
-  background: #5c0101;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 10px;
-  font-weight: 600;
-}
-.medi_Guide_ques_btn:hover {
-  background: #fff;
-  color: #5c0101;
+/* Container */
+.medi_Guide_container {
+  max-width: 1200px;
 }
 
-/* Tabs */
-.medi_Guide_ques_topic_tab {
-  cursor: pointer;
-  padding: 8px 16px;
-  margin: 5px;
-  border-radius: 20px;
-  background: #690303;
-  font-weight: 500;
-  color: white;
+/* Heading */
+.medi_Guide_heading {
+  font-weight: 700;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  color: #222;
+}
+
+/* Card */
+.medi_Guide_card {
+  border-radius: 15px;
+  overflow: hidden;
   transition: all 0.3s ease;
-}
-.medi_Guide_ques_topic_tab.active {
   background: #fff;
-  border: 1px solid #420101;
-  color: #420101;
+  border: none;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
-.medi_Guide_ques_popular_topic{
-  background: #fff;
-font-family: 'Times New Roman', Times, serif;
-  color: #420101;
+.medi_Guide_card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Cards */
-.medi_Guide_ques_card {
-  background: #fff;
+/* Card image */
+.medi_Guide_img {
+  height: 250px;
+  object-fit: cover;
   width: 100%;
-  transition: transform 0.3s;
+  border-bottom: 1px solid #eee;
 }
-.medi_Guide_ques_card:hover {
-  transform: translateY(-5px);
+
+/* Card content */
+.medi_Guide_card .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
-.medi_Guide_ques_tag {
-  background: #ffefef;
-  color: #5c0101;
+
+.medi_Guide_card .card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.medi_Guide_card .card-text {
+  font-size: 0.95rem;
+  color: #555;
+  flex-grow: 1;
+}
+
+/* Action row (like + comment + stats) */
+.medi_Guide_actionRow {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #eee;
+}
+
+.medi_Guide_actionRow button {
+  font-size: 0.85rem;
+  border-radius: 20px;
+  padding: 5px 12px;
+  margin-right: 6px;
+  transition: transform 0.2s ease;
+}
+
+.medi_Guide_actionRow button:hover {
+  transform: scale(1.05);
+}
+
+/* Badge for Admin Stats */
+.badge.bg-info {
+  font-size: 0.8rem;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+/* Comment Section */
+.medi_Guide_commentBox input {
+  font-size: 0.9rem;
+  border-radius: 12px;
+}
+
+.medi_Guide_commentBox button {
+  border-radius: 12px;
+  font-size: 0.8rem;
+  padding: 5px 12px;
+}
+
+/* Comment List */
+.medi_Guide_commentList {
+  max-height: 120px;
+  overflow-y: auto;
+  margin-top: 8px;
+  border-top: 1px solid #eee;
+  padding-top: 8px;
+}
+
+.medi_Guide_commentList li {
+  padding: 4px 0;
+  border-bottom: 1px dashed #ddd;
   font-size: 0.85rem;
 }
-
-/* Modal */
-.medi_Guide_ques_modal_header {
-  background: #5c0101;
-  color: white;
+.medi_Guide_commentList li:last-child {
+  border-bottom: none;
 }
-.medi_Guide_ques_input,
-.medi_Guide_ques_textarea {
-  border-radius: 8px;
+
+/* Upload Preview */
+.medi_Guide_preview {
+  max-height: 150px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
   border: 1px solid #ddd;
-  padding: 10px;
-}
-.medi_Guide_ques_input:focus,
-.medi_Guide_ques_textarea:focus {
-  border: 1px solid #5c0101;
-  outline: none;
-}
-
-.medi_Guide_answer_button{
-  background: #5c0101;
-  border: none;
-  color: white;
-  padding: 5px 15px;
-  border-radius: 8px;
-  font-weight: 500;
-}
-
-.medi_Guide_answer_button:hover{
-  background: #fff;
-  color: #5c0101;
-  border: 1px solid #5c0101;
 }
 
 /* Responsive */
 @media (max-width: 992px) {
-  .medi_Guide_ques_header h2 {
-    font-size: 1.6rem;
+  .medi_Guide_img {
+    height: 220px;
   }
 }
 @media (max-width: 768px) {
-  .medi_Guide_ques_banner img {
-    max-height: 200px;
+  .medi_Guide_img {
+    height: 200px;
   }
-  .medi_Guide_ques_header h2 {
-    font-size: 1.4rem;
-  }
-  .medi_Guide_ques_btn {
-    width: 100%;
+  .medi_Guide_heading {
+    font-size: 1.5rem;
   }
 }
-@media (max-width: 480px) {
-  .medi_Guide_ques_header {
-    padding: 15px;
+@media (max-width: 576px) {
+  .medi_Guide_img {
+    height: 180px;
   }
-  .medi_Guide_ques_header h2 {
-    font-size: 1.2rem;
+  .medi_Guide_card .card-title {
+    font-size: 1rem;
   }
-  .medi_Guide_ques_card {
-    padding: 12px;
+  .medi_Guide_card .card-text {
+    font-size: 0.85rem;
   }
-  .medi_Guide_ques_btn {
-    font-size: 0.9rem;
-    padding: 8px 14px;
+}
+.medi_Guide_commentSection {
+  animation: fadeSlide 0.3s ease;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

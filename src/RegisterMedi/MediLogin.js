@@ -7,10 +7,6 @@ import { UserContext } from "../Contex/UserContext";
 import "./MediRegister.css";
 import { toast } from "react-toastify";
 
-
-
-
-
 const MediLogin = () => {
   const { setUsername } = useContext(UserContext);
   const navigate = useNavigate();
@@ -24,25 +20,37 @@ const MediLogin = () => {
       email: Yup.string().email("Invalid email").required("Email is required"),
       password: Yup.string().required("Password is required"),
     }),
-    onSubmit: async (values, { setSubmitting, setErrors }) => {
-  // inside onSubmit:
-try {
-  const res = await axios.post("https://alpha-backend-lake.vercel.app/login", values);
-  if (res.status === 200) {
-    localStorage.setItem("zuppaToken", res.data.zuppa);
-    localStorage.setItem("username", res.data.username);
-    setUsername(res.data.username);
-    toast.success(res.data.message);
-    navigate("/signin");
-  }
-} catch (err) {
-  if (err.response?.data?.message) {
-    toast.error(err.response.data.message);
-      toast.error(err.response?.data?.message || "Login failed");
-  } else {
-    toast.error("Login failed. Try again.");
-  }
+    onSubmit: async (values, { setSubmitting }) => {
+      try {
+        const res = await axios.post(
+          "https://alpha-backend-lake.vercel.app/login",
+          values
+        );
 
+        if (res.status === 200) {
+          // ✅ Save JSON properly (instead of just token + username)
+          const userData = {
+            email: values.email,
+            username: res.data.username,
+            token: res.data.zuppa, // backend response key
+          };
+
+          localStorage.setItem("user", JSON.stringify(userData));
+          localStorage.setItem("zuppaToken", res.data.zuppa); // old code (optional keep)
+          localStorage.setItem("username", res.data.username); // old code (optional keep)
+
+          setUsername(res.data.username);
+          toast.success(res.data.message);
+
+          // Navigate to guidelines after login
+          navigate("/guidelines_page");
+        }
+      } catch (err) {
+        if (err.response?.data?.message) {
+          toast.error(err.response.data.message);
+        } else {
+          toast.error("Login failed. Try again.");
+        }
       } finally {
         setSubmitting(false);
       }
@@ -80,7 +88,9 @@ try {
               type="password"
               name="password"
               className={`form-control ${
-                formik.touched.password && formik.errors.password ? "is-invalid" : ""
+                formik.touched.password && formik.errors.password
+                  ? "is-invalid"
+                  : ""
               }`}
               value={formik.values.password}
               onChange={formik.handleChange}
@@ -92,7 +102,11 @@ try {
             )}
           </div>
 
-          <button type="submit" className="btn btn-success w-100" disabled={formik.isSubmitting}>
+          <button
+            type="submit"
+            className="btn btn-success w-100"
+            disabled={formik.isSubmitting}
+          >
             {formik.isSubmitting ? "Logging in..." : "Login"}
           </button>
         </form>

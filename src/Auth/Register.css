@@ -2,6 +2,7 @@
 .medi_regis_section {
   background: linear-gradient(135deg, #ffe2e9, #fcc0c0);  color: white;
   display: flex;
+  height: 100vh;
 }
 
 /* ==== Top Stats ==== */

@@ -45,7 +45,7 @@ const HeaderPage = () => {
             />
           </div>
         ) : (
-          <Link to="/alpha_register" className="d-none d-md-block">
+          <Link to="/alpha_register" className="d-none d-md-block medi_head_inlog">
             Sign In
           </Link>
         )}
