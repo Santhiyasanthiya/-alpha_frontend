@@ -2,63 +2,61 @@ import React, { useState } from "react";
 import "./JoinDiscussion.css";
 import { Button, Form, Card } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
+import { FaHeart, FaRegHeart, FaCommentDots, FaPaperPlane } from "react-icons/fa";
 import "react-toastify/dist/ReactToastify.css";
 
 const JoinDiscussion = () => {
   const [text, setText] = useState("");
   const [posts, setPosts] = useState([]);
-  const [activeCommentBox, setActiveCommentBox] = useState(null); // to toggle comment box
+  const [activeCommentBox, setActiveCommentBox] = useState(null);
 
-  const handleCancel = () => {
-    setText("");
-  };
+  const handleCancel = () => setText("");
 
   const handlePost = () => {
-    if (text.trim() !== "") {
-      setPosts([
-        {
-          id: Date.now(),
-          content: text,
-          likes: 0,
-          liked: false, // track user like
-          comments: [],
-        },
-        ...posts,
-      ]);
-      setText("");
+    if (text.trim() === "") {
+      toast.error("Please write something before posting!");
+      return;
     }
+    setPosts([
+      {
+        id: Date.now(),
+        content: text,
+        likes: 0,
+        liked: false,
+        comments: [],
+      },
+      ...posts,
+    ]);
+    setText("");
+    toast.success("Post created successfully!");
   };
 
   const handleLike = (id) => {
     setPosts(
-      posts.map((post) => {
-        if (post.id === id) {
-          if (post.liked) {
-            toast.warn("You already liked this post!");
-            return post;
-          }
-          return { ...post, likes: post.likes + 1, liked: true };
-        }
-        return post;
-      })
+      posts.map((post) =>
+        post.id === id
+          ? post.liked
+            ? (toast.warn("You already liked this post!"), post)
+            : { ...post, likes: post.likes + 1, liked: true }
+          : post
+      )
     );
   };
 
   const handleComment = (id, commentText) => {
     if (commentText.trim() === "") return;
-
     setPosts(
       posts.map((post) =>
         post.id === id
-          ? { ...post, comments: [...post.comments, commentText] }
+          ? { ...post, comments: [...post.comments, commentText], tempComment: "" }
           : post
       )
     );
-    setActiveCommentBox(null); // close after comment
+    toast.info("Comment added!");
   };
 
   const handleUploadIdeas = () => {
-    toast.info("Processing...", {
+    toast.info("Processing your ideas...", {
       position: "top-center",
       autoClose: 2000,
     });
@@ -66,16 +64,17 @@ const JoinDiscussion = () => {
 
   return (
     <div className="container medi_discus_container">
-      <Card className="medi_discus_card shadow-sm">
-        <h5 className="medi_discus_title">Create a Post</h5>
-        <p className="medi_discus_subtitle">Share your thoughts</p>
+      <Card className="medi_discus_card shadow-lg glass-card">
+        <h3 className="medi_discus_title">Join the Discussion</h3>
+        <p className="medi_discus_subtitle">Share your ideas and inspire others 💡</p>
+
         <Form>
           <Form.Group className="mb-3" controlId="postText">
             <Form.Control
               as="textarea"
               rows={3}
               className="medi_discus_textarea"
-              placeholder="What's on your mind? Share your experiences, insights, or ask for advice..."
+              placeholder="What's on your mind today?"
               value={text}
               onChange={(e) => setText(e.target.value)}
             />
@@ -83,12 +82,12 @@ const JoinDiscussion = () => {
 
           <div className="medi_discus_btnGroup">
             <Button variant="warning" onClick={handleUploadIdeas}>
-              📌 Upload your ideas
+              📌 Upload Ideas
             </Button>
-            <Button variant="secondary" onClick={handleCancel}>
+            <Button variant="outline-secondary" onClick={handleCancel}>
               Cancel
             </Button>
-            <Button variant="primary" onClick={handlePost}>
+            <Button variant="success" onClick={handlePost}>
               Post
             </Button>
           </div>
@@ -98,35 +97,40 @@ const JoinDiscussion = () => {
       {/* Posts Section */}
       <div className="mt-4">
         {posts.map((post) => (
-          <Card key={post.id} className="medi_discus_postCard shadow-sm">
+          <Card key={post.id} className="medi_discus_postCard shadow glass-post">
             <Card.Body>
               <p className="medi_discus_postText">{post.content}</p>
 
               {/* Actions */}
-              <div className="d-flex gap-3 mt-2">
+              <div className="d-flex gap-3 mt-3 medi_discus_actions">
                 <Button
-                  variant={post.liked ? "danger" : "outline-danger"}
-                  size="sm"
+                  variant="light"
+                  className="medi_discus_likeBtn"
                   onClick={() => handleLike(post.id)}
                 >
-                  👍 Like ({post.likes})
+                  {post.liked ? (
+                    <FaHeart className="text-danger" />
+                  ) : (
+                    <FaRegHeart className="text-danger" />
+                  )}{" "}
+                  {post.likes}
                 </Button>
                 <Button
-                  variant="outline-primary"
-                  size="sm"
+                  variant="light"
+                  className="medi_discus_commentBtn"
                   onClick={() =>
                     setActiveCommentBox(
                       activeCommentBox === post.id ? null : post.id
                     )
                   }
                 >
-                  💬 Comment
+                  <FaCommentDots className="text-primary" /> {post.comments.length}
                 </Button>
               </div>
 
-              {/* Comment Input (only when opened) */}
+              {/* Comment Box */}
               {activeCommentBox === post.id && (
-                <div className="mt-3">
+                <div className="mt-3 medi_discus_commentBox">
                   <Form.Control
                     type="text"
                     placeholder="Write a comment..."
@@ -142,23 +146,22 @@ const JoinDiscussion = () => {
                     }
                   />
                   <Button
-                    className="mt-2"
-                    size="sm"
+                    className="mt-2 medi_discus_sendBtn"
                     onClick={() =>
                       handleComment(post.id, post.tempComment || "")
                     }
                   >
-                    Add Comment
+                    <FaPaperPlane /> Send
                   </Button>
                 </div>
               )}
 
               {/* Comments List */}
               {post.comments.length > 0 && (
-                <ul className="mt-2">
+                <ul className="mt-3 medi_discus_commentList">
                   {post.comments.map((cmt, idx) => (
                     <li key={idx} className="medi_discus_comment">
-                      {cmt}
+                      💬 {cmt}
                     </li>
                   ))}
                 </ul>

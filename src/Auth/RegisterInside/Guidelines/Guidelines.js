@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Guidelines.css";
+import { FaHeart, FaCommentDots, FaPaperPlane } from "react-icons/fa";
 
 const Guidelines = () => {
   const [guides, setGuides] = useState([]);
@@ -48,7 +49,7 @@ const Guidelines = () => {
       );
       setGuides(
         guides.map((g) =>
-          g._id === id ? { ...g, likes: g.likes + 1 } : g
+          g._id === id ? { ...g, likes: (g.likes || 0) + 1 } : g
         )
       );
     } catch (err) {
@@ -82,7 +83,7 @@ const Guidelines = () => {
       );
       setCommentText({ ...commentText, [id]: "" });
       toast.success("Comment added");
-    } catch (err) {
+    } catch {
       toast.error("Error commenting");
     }
   };
@@ -101,9 +102,7 @@ const Guidelines = () => {
         "https://alpha-backend-lake.vercel.app/guidelines",
         values,
         {
-          headers: {
-            Authorization: "chandru_secret",
-          },
+          headers: { Authorization: "chandru_secret" },
         }
       );
       setGuides([res.data, ...guides]);
@@ -128,7 +127,7 @@ const Guidelines = () => {
 
   return (
     <div className="container medi_Guide_container py-4">
-      <h2 className="text-center medi_Guide_heading">Guidelines</h2>
+      <h2 className="text-center medi_Guide_heading">Community Guidelines</h2>
 
       {/* ✅ Admin Upload Form */}
       {user?.email?.toLowerCase() === "chandru@gmail.com" && (
@@ -138,32 +137,30 @@ const Guidelines = () => {
           onSubmit={handleUpload}
         >
           {({ setFieldValue, values }) => (
-            <Form className="card p-3 shadow-sm mb-4 medi_Guide_form">
-              <h5>Upload New Post</h5>
+            <Form className="medi_Guide_uploadCard shadow-sm mb-4 p-3">
+              <h5 className="medi_Guide_uploadTitle">📤 Upload New Post</h5>
               <Field
                 type="text"
                 name="title"
-                placeholder="Title"
-                className="form-control mb-2"
+                placeholder="Enter Title"
+                className="form-control mb-2 medi_Guide_input"
               />
               <ErrorMessage
                 name="title"
                 component="div"
                 className="text-danger small"
               />
-
               <Field
                 as="textarea"
                 name="content"
-                placeholder="Content"
-                className="form-control mb-2"
+                placeholder="Enter Content"
+                className="form-control mb-2 medi_Guide_textarea"
               />
               <ErrorMessage
                 name="content"
                 component="div"
                 className="text-danger small"
               />
-
               <input
                 type="file"
                 className="form-control mb-2"
@@ -174,7 +171,6 @@ const Guidelines = () => {
                 component="div"
                 className="text-danger small"
               />
-
               {values.image && (
                 <img
                   src={values.image}
@@ -182,8 +178,7 @@ const Guidelines = () => {
                   className="medi_Guide_preview"
                 />
               )}
-
-              <button type="submit" className="btn btn-success">
+              <button type="submit" className="btn medi_Guide_uploadBtn">
                 Upload
               </button>
             </Form>
@@ -191,83 +186,63 @@ const Guidelines = () => {
         </Formik>
       )}
 
-      <div className="row">
+      {/* ✅ Posts Section */}
+      <div className="row justify-content-center">
         {guides.map((g) => (
           <div
             key={g._id}
-            className="col-lg-4 col-md-6 medi_Guide_cardcol mb-4"
+            className="col-lg-4 col-md-6 col-sm-10 mb-4 d-flex justify-content-center"
           >
-            <div className="card medi_Guide_card shadow-sm">
-              <img
-                src={g.image}
-                alt="guide"
-                className="card-img-top medi_Guide_img"
-              />
-              <div className="card-body">
-                <h5 className="card-title">{g.title}</h5>
-                <p className="card-text">{g.content}</p>
-
-                {/* Action Row */}
-                <div className="d-flex align-items-center justify-content-between medi_Guide_actionRow">
-                  <div>
-                    <button
-                      className="btn medi_guid_like_button me-2"
-                      onClick={() => handleLike(g._id)}
-                    >
-                      👍 {g.likes || 0}
-                    </button>
-                    <button
-                      className="btn btn-outline-secondary"
-                      onClick={() => toggleComments(g._id)}
-                    >
-                      💬 Comments
-                    </button>
-                  </div>
-
-                  {/* Admin Stats */}
-                  {user?.email?.toLowerCase() === "chandru@gmail.com" && (
-                    <span className="badge bg-info">
-                      {g.likes || 0} Likes • {(g.comments?.length || 0)} Comments
-                    </span>
-                  )}
-                </div>
-
-                {/* Comment Input */}
-                <div className="medi_Guide_commentBox mt-3">
-                  <input
-                    id={`commentBox-${g._id}`}
-                    type="text"
-                    placeholder="Write a comment..."
-                    className="form-control mb-2"
-                    value={commentText[g._id] || ""}
-                    onChange={(e) =>
-                      setCommentText({
-                        ...commentText,
-                        [g._id]: e.target.value,
-                      })
-                    }
-                  />
+            <div className="medi_Guide_postCard shadow-sm">
+              <div className="medi_Guide_imgWrap">
+                <img src={g.image} alt="guide" className="medi_Guide_img" />
+              </div>
+              <div className="medi_Guide_postBody">
+                <h5 className="medi_Guide_postTitle">{g.title}</h5>
+                <p className="medi_Guide_postText">{g.content}</p>
+                <div className="d-flex justify-content-between align-items-center mt-2">
                   <button
-                    className="btn btn-sm btn-secondary"
-                    onClick={() => handleComment(g._id)}
+                    className="medi_Guide_likeBtn"
+                    onClick={() => handleLike(g._id)}
                   >
-                    Submit Comment
+                    <FaHeart /> {g.likes || 0}
+                  </button>
+                  <button
+                    className="medi_Guide_commentBtn"
+                    onClick={() => toggleComments(g._id)}
+                  >
+                    <FaCommentDots /> Comments
                   </button>
                 </div>
 
-                {/* Show Comments */}
                 {openComments[g._id] && (
-                  <div className="medi_Guide_commentSection">
-                    {g.comments && g.comments.length > 0 ? (
-                      <ul className="list-unstyled mt-2 medi_Guide_commentList">
+                  <div className="medi_Guide_commentBox mt-3">
+                    <input
+                      type="text"
+                      placeholder="Write a comment..."
+                      className="form-control medi_Guide_commentInput"
+                      value={commentText[g._id] || ""}
+                      onChange={(e) =>
+                        setCommentText({
+                          ...commentText,
+                          [g._id]: e.target.value,
+                        })
+                      }
+                    />
+                    <button
+                      className="medi_Guide_sendBtn"
+                      onClick={() => handleComment(g._id)}
+                    >
+                      <FaPaperPlane />
+                    </button>
+                    {g.comments?.length > 0 && (
+                      <ul className="medi_Guide_commentList mt-2">
                         {g.comments.map((c, idx) => (
-                          <li key={idx} className="small text-muted">
-                            <b>{c.author}</b>: {c.text}
+                          <li key={idx}>
+                            <strong>{c.author}</strong>: {c.text}
                           </li>
                         ))}
                       </ul>
-                    ) : (
-                      <p className="text-muted small mt-2">No comments yet</p>
                     )}
                   </div>
                 )}

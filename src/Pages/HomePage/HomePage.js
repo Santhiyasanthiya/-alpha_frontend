@@ -14,28 +14,28 @@ const HomePage = () => {
   const handleGetStarted = () => {
     const token = localStorage.getItem("token");
     if (token) {
-      navigate("/signin");  // ✅ already login
+      navigate("/signin");  
     } else {
-      navigate("/login");   // ❌ not login
+      navigate("/login");   
     }
   };
   return (
 <div>
  <section className="medi_home_pg d-flex align-items-center text-center text-white">
       <div className="container">
-        {/* Heading */}
+  
         <h1 className="medi_home_pg_title mb-3">
           Welcome to Alphaingen Medical Coding And Billing Center
         </h1>
 
-        {/* Subtitle */}
+  
         <p className="medi_home_pg_subtitle mx-auto mb-4">
           Your comprehensive platform for medical coding education, community
           discussions, and the latest industry updates. Join thousands of coding
           professionals advancing their careers.
         </p>
 
-        {/* ✅ Button with logic */}
+  
         <div className="d-flex justify-content-center gap-3 flex-wrap mb-4">
           <button
             onClick={handleGetStarted}

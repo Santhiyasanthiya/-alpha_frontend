@@ -1,45 +1,46 @@
-
+/* Premium Glass Design */
 .medi_discus_container {
-  margin-top: 20px;
-  height: 100vh;
+  margin-top: 40px;
+  min-height: 100vh;
   padding: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .medi_discus_card {
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  background: #fff;
-  padding: 20px;
+  border-radius: 15px;
+  padding: 25px;
+  transition: all 0.4s ease;
 }
 
+
 .medi_discus_title {
-  font-size: 2rem;
-  color: #470101;
-  font-weight: 600;
-  font-family: "Times New Roman", Times, serif;
-  margin-bottom: 5px;
+  font-size: 1.8rem;
+  color: #4d0000;
+  font-weight: 700;
+  text-align: center;
 }
 
 .medi_discus_subtitle {
-  color: #470101;
-  font-family: "Times New Roman", Times, serif;
+  color: #690000;
   font-size: 1.1rem;
-  margin-bottom: 15px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .medi_discus_textarea {
   resize: none;
-  font-size: 0.95rem;
-  border-radius: 8px;
-  padding: 10px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #cfcfcf;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.9);
 }
-
-.medi_discus_fileInput {
-  border-radius: 8px;
-  padding: 8px;
-  font-size: 0.95rem;
-}
-
 
 .medi_discus_btnGroup {
   display: flex;
@@ -48,116 +49,91 @@
 }
 
 .medi_discus_postCard {
-  border-radius: 10px;
-  padding: 15px;
-  margin-bottom: 15px;
-
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: 0.4s ease;
 }
 
-/* Post text */
+.glass-post {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.medi_discus_postCard:hover {
+  transform: scale(1.01);
+}
+
 .medi_discus_postText {
-  margin: 0;
-  font-size: 1rem;
-  color: #2c0000;
+  font-size: 1.05rem;
+  color: #212121;
+  line-height: 1.5;
 }
 
-/* Post Image */
-.medi_discus_postImage {
-  display: flex;
-  flex-direction: row;
-  max-width: 150px;
-  height: auto;
-  margin-top: 10px;
-  border-radius: 10px;
-  object-fit: cover;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Like section */
-.medi_discus_likeSection {
-  margin-top: 10px;
-}
-
-.medi_discus_likeBtn {
+.medi_discus_actions button {
+  border-radius: 30px;
   font-size: 0.9rem;
-  border-radius: 20px;
-  padding: 5px 15px;
+  padding: 6px 15px;
   transition: all 0.3s ease;
 }
 
-.medi_discus_likeBtn:hover {
-  background: #fff;
-  color: #470101;
+.medi_discus_actions button:hover {
+  transform: scale(1.1);
+  background: #f8f9fa;
 }
 
-/* Media Queries for responsiveness */
+.medi_discus_commentBox input {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.medi_discus_sendBtn {
+  background-color: #00796b;
+  color: #fff;
+  border-radius: 30px;
+  border: none;
+  transition: 0.3s ease;
+}
+
+.medi_discus_sendBtn:hover {
+  background-color: #004d40;
+}
+
+.medi_discus_commentList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.medi_discus_comment {
+  background: #f1f8e9;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #580202;
+  border-left: 4px solid #000000;
+}
+
+/* Responsiveness */
 @media (max-width: 768px) {
   .medi_discus_card {
     padding: 15px;
   }
 
   .medi_discus_title {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
-  .medi_discus_textarea {
-    font-size: 0.9rem;
-  }
-
-  .medi_discus_postText {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 576px) {
   .medi_discus_btnGroup {
     flex-direction: column;
-    align-items: stretch;
   }
 
   .medi_discus_btnGroup .btn {
     width: 100%;
   }
 
-  .medi_discus_postImage {
-    border-radius: 8px;
+  .medi_discus_postText {
+    font-size: 0.95rem;
   }
-}
-/* Upload button */
-.medi_discus_uploadBtn {
-  display: inline-block;
-  background-color: #ffb3b3;
-  color: #300000;
-  padding: 8px 15px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.medi_discus_uploadBtn:hover {
-  background-color: #ff9999;
-  color: #fff;
-}
-
-/* Responsive Fixes */
-@media (max-width: 768px) {
-  .medi_discus_title {
-    font-size: 1.3rem;
-  }
-
-  .medi_discus_uploadBtn {
-    font-size: 0.9rem;
-    width: 100%;
-    text-align: center;
-  }
-}
-.medi_discus_comment {
-  font-size: 0.9rem;
-  background: #f5f5f5;
-  padding: 5px 10px;
-  margin-bottom: 5px;
-  border-radius: 6px;
 }

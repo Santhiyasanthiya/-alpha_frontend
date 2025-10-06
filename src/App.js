@@ -34,7 +34,7 @@ const App = () => {
         <Route path="/guidelines_page" element={<Guidelines />} />
       </Routes>
 
-      {/* ✅ ToastContainer OUTSIDE Routes */}
+    
       <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
     </UserProvider>
   );

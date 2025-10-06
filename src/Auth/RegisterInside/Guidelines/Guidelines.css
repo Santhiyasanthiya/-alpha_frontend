@@ -1,162 +1,170 @@
-/* Container */
 .medi_Guide_container {
   max-width: 1200px;
+  font-family:'Times New Roman', Times, serif;
 }
 
-/* Heading */
 .medi_Guide_heading {
   font-weight: 700;
   margin-bottom: 30px;
-  font-size: 1.8rem;
-  color: #222;
+  color: #440101;
+  font-size: 2rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
 }
 
-/* Card */
-.medi_Guide_card {
-  border-radius: 15px;
-  overflow: hidden;
-  transition: all 0.3s ease;
+/* Upload form */
+.medi_Guide_uploadCard {
   background: #fff;
-  border: none;
-  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  border-radius: 16px;
+  border: 1px solid #eee;
 }
-.medi_Guide_card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-/* Card image */
-.medi_Guide_img {
-  height: 250px;
-  object-fit: cover;
-  width: 100%;
-  border-bottom: 1px solid #eee;
-}
-
-/* Card content */
-.medi_Guide_card .card-body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.medi_Guide_card .card-title {
-  font-size: 1.2rem;
+.medi_Guide_uploadTitle {
   font-weight: 600;
-  margin-bottom: 8px;
+  color: #444;
 }
-
-.medi_Guide_card .card-text {
-  font-size: 0.95rem;
-  color: #555;
-  flex-grow: 1;
+.medi_Guide_uploadBtn {
+  background: linear-gradient(90deg, #00b09b, #96c93d);
+  color: #fff;
+  border-radius: 25px;
+  padding: 6px 20px;
+  border: none;
+  transition: 0.3s;
 }
-
-/* Action row (like + comment + stats) */
-.medi_Guide_actionRow {
-  margin-top: 10px;
-  padding-top: 8px;
-  border-top: 1px solid #eee;
-}
-
-.medi_Guide_actionRow button {
-  font-size: 0.85rem;
-  border-radius: 20px;
-  padding: 5px 12px;
-  margin-right: 6px;
-  transition: transform 0.2s ease;
-}
-
-.medi_Guide_actionRow button:hover {
+.medi_Guide_uploadBtn:hover {
   transform: scale(1.05);
 }
 
-/* Badge for Admin Stats */
-.badge.bg-info {
-  font-size: 0.8rem;
-  padding: 5px 10px;
-  border-radius: 20px;
+/* Post card */
+.medi_Guide_postCard {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 370px;
+  transition: all 0.3s ease;
+  border: 1px solid #b9b9b9;
+  display: flex;
+  flex-direction: column;
+  
+  
 }
 
-/* Comment Section */
-.medi_Guide_commentBox input {
-  font-size: 0.9rem;
-  border-radius: 12px;
+.medi_Guide_imgWrap {
+  width: 100%;
+  height: 270px;
+  overflow: hidden;
+}
+.medi_Guide_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.medi_Guide_commentBox button {
-  border-radius: 12px;
-  font-size: 0.8rem;
-  padding: 5px 12px;
-}
 
-/* Comment List */
-.medi_Guide_commentList {
-  max-height: 120px;
-  overflow-y: auto;
+.medi_Guide_postBody {
+  padding: 15px 18px;
+  background: linear-gradient(90deg, #520518, #a30d21);
+}
+.medi_Guide_postTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+.medi_Guide_postText {
+  font-size: 0.95rem;
+  color: #ffffff;
   margin-top: 8px;
+}
+
+/* Buttons */
+.medi_Guide_likeBtn,
+.medi_Guide_commentBtn {
+  background: transparent;
+  border: none;
+  color: #ff0066;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.medi_Guide_commentBtn {
+  color: #ffffff;
+}
+.medi_Guide_likeBtn:hover {
+  color: #d9004c;
+  transform: scale(1.1);
+}
+.medi_Guide_commentBtn:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+/* Comment box */
+.medi_Guide_commentBox {
+  position: relative;
+}
+.medi_Guide_commentInput {
+  border-radius: 20px;
+  padding-right: 40px;
+  font-size: 0.9rem;
+}
+.medi_Guide_sendBtn {
+  position: absolute;
+  right: 8px;
+  top: 4px;
+  background: transparent;
+  border: none;
+  color: #28a745;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.medi_Guide_sendBtn:hover {
+  color: #1f7d35;
+}
+
+.medi_Guide_commentList {
+  list-style: none;
+  padding-left: 0;
   border-top: 1px solid #eee;
+  margin-top: 10px;
   padding-top: 8px;
 }
-
 .medi_Guide_commentList li {
+  font-size: 0.9rem;
+  color: #ffffff;
   padding: 4px 0;
-  border-bottom: 1px dashed #ddd;
-  font-size: 0.85rem;
+  border-bottom: 1px dashed #eee;
 }
 .medi_Guide_commentList li:last-child {
   border-bottom: none;
 }
 
-/* Upload Preview */
+/* Preview */
 .medi_Guide_preview {
   max-height: 150px;
-  object-fit: cover;
   width: 100%;
+  object-fit: cover;
   border-radius: 12px;
   margin-bottom: 10px;
-  border: 1px solid #ddd;
 }
 
 /* Responsive */
-@media (max-width: 992px) {
-  .medi_Guide_img {
+@media (max-width: 768px) {
+  .medi_Guide_heading {
+    font-size: 1.6rem;
+  }
+  .medi_Guide_imgWrap {
     height: 220px;
   }
 }
-@media (max-width: 768px) {
-  .medi_Guide_img {
+@media (max-width: 576px) {
+  .medi_Guide_imgWrap {
     height: 200px;
   }
-  .medi_Guide_heading {
-    font-size: 1.5rem;
-  }
-}
-@media (max-width: 576px) {
-  .medi_Guide_img {
-    height: 180px;
-  }
-  .medi_Guide_card .card-title {
-    font-size: 1rem;
-  }
-  .medi_Guide_card .card-text {
+  .medi_Guide_postText {
     font-size: 0.85rem;
-  }
-}
-.medi_Guide_commentSection {
-  animation: fadeSlide 0.3s ease;
-}
-
-@keyframes fadeSlide {
-  from {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }

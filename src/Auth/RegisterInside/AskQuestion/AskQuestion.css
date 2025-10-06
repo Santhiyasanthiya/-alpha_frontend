@@ -1,133 +1,198 @@
+/* Container */
+.ask-premium-container {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #112;
+}
 
-.ask_medi_ques_header {
-  background: linear-gradient(135deg, #ffe2e9, #fcc0c0);
-  border-radius: 20px;
-  margin-top: 20px;
+/* Hero */
+.premium-hero {
+  background: linear-gradient(135deg, #ffffff 0%, #fffaf7 40%, #ffeef2 100%);
+  border-radius: 18px;
+  padding: 26px;
+  align-items: center;
 }
-.ask_medi_ques_header h2 {
-  font-size: 2rem;
-  color: #5c0101;
+
+.hero-title {
+  font-size: 1.6rem;
+  margin: 0;
+  color: #2b0b0b;
+  letter-spacing: -0.2px;
 }
-.ask_medi_ques_btn {
-  background: #5c0101;
+.hero-subtext {
+  margin: 0;
+  color: #5a4b4b;
+  font-size: 0.95rem;
+}
+
+/* Buttons */
+.btn-primary-ghost {
+  background: linear-gradient(90deg,#8b2222,#5c0101);
   border: none;
-  padding: 10px 20px;
+  color: #fff;
+  padding: 8px 14px;
   border-radius: 10px;
-  font-weight: 600;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  box-shadow: 0 6px 18px rgba(92,1,1,0.18);
 }
-.ask_medi_ques_btn:hover {
-  background: #fff;
-  color: #5c0101;
+.btn-primary-ghost:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(92,1,1,0.22);
 }
 
-/* Tabs */
-.ask_medi_ques_topic_tab {
+/* Search */
+.search-group .form-control {
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.search-group .input-group-text {
+  background: #fff;
+  border-right: 0;
+  border-radius: 10px 0 0 10px;
+}
+
+/* Topic chips */
+.topic-chip {
   cursor: pointer;
-  padding: 8px 16px;
-  margin: 5px;
-  border-radius: 20px;
-  background: #690303;
-  font-weight: 500;
-  color: white;
-  transition: all 0.3s ease;
+  padding: 8px 12px;
+  font-weight: 600;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.04);
 }
-.ask_medi_ques_topic_tab.active {
-  background: #fff;
-  border: 1px solid #420101;
-  color: #420101;
-}
-.ask_medi_ques_popular_topic {
-  background: #fff;
-  font-family: "Times New Roman", Times, serif;
-  color: #420101;
+.topic-chip.active {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.07);
 }
 
 /* Cards */
-.ask_medi_ques_card {
-  background: #fff;
-  width: 100%;
-  transition: transform 0.3s;
-}
-.ask_medi_ques_card:hover {
-  transform: translateY(-5px);
-}
-.ask_medi_ques_tag {
-  background: #ffefef;
-  color: #5c0101;
-  font-size: 0.85rem;
-}
-
-/* Modal */
-.ask_medi_ques_modal_header {
-  background: #5c0101;
-  color: white;
-}
-.ask_medi_ques_input,
-.ask_medi_ques_textarea {
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  padding: 10px;
-}
-.ask_medi_ques_input:focus,
-.ask_medi_ques_textarea:focus {
-  border: 1px solid #5c0101;
-  outline: none;
-}
-
-.medi_ask_answer_button {
-  background: #5c0101;
+.question-card {
   border: none;
-  color: white;
-  padding: 5px 15px;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.28s ease, box-shadow .28s ease;
+}
+.question-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(16, 24, 40, 0.08);
+}
+
+/* small helper */
+.text-truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Replies preview */
+.reply-item {
+  background: linear-gradient(180deg, #fff, #fbfbfb);
+  border: 1px solid rgba(0,0,0,0.03);
+  box-shadow: 0 4px 10px rgba(11,12,12,0.03);
+}
+.reply-text {
+  color: #222;
+  font-size: 0.95rem;
+}
+
+/* Avatar wrap */
+.avatar-wrap {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Right sticky card */
+.sticky-card {
+  position: sticky;
+  top: 90px;
+  border-radius: 12px;
+}
+
+/* Modal header */
+.modal-header-custom {
+  background: linear-gradient(90deg,#5c0101,#8b2222);
+  color: #fff;
+  border-bottom: none;
+}
+
+/* Empty card */
+.empty-card {
+  border-radius: 12px;
+  border: 1px dashed rgba(0,0,0,0.06);
+}
+
+/* Reply box */
+.reply-box .form-control {
   border-radius: 8px;
-  font-weight: 500;
+  min-height: 60px;
 }
 
-.medi_ask_answer_button:hover {
-  background: #fff;
+/* small meta */
+.topic-badge {
+  background: rgba(92,1,1,0.08);
   color: #5c0101;
-  border: 1px solid #5c0101;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 6px 8px;
 }
 
-.ask_medi_ques_topic_details_box {
-  background-color: rgba(248, 198, 198, 0.288);
-  padding: 10px;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 18px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-/* Responsive */
+/* styling for small screens */
 @media (max-width: 992px) {
-  .ask_medi_ques_header h2 {
-    font-size: 1.6rem;
-  }
-}
-@media (max-width: 768px) {
-  .ask_medi_ques_banner img {
-    max-height: 200px;
-  }
-  .ask_medi_ques_header h2 {
-    font-size: 1.4rem;
-  }
-  .ask_medi_ques_btn {
+  .hero-right {
     width: 100%;
   }
+  .hero-left {
+    margin-bottom: 12px;
+  }
+  .premium-hero {
+    padding: 18px;
+  }
 }
-@media (max-width: 480px) {
-  .ask_medi_ques_header {
-    padding: 15px;
+
+/* stacked layout on very small devices */
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.25rem;
   }
-  .ask_medi_ques_header h2 {
-    font-size: 1.2rem;
-  }
-  .ask_medi_ques_card {
-    padding: 12px;
-  }
-  .ask_medi_ques_btn {
+  .btn-primary-ghost {
+    padding: 8px 10px;
     font-size: 0.9rem;
-    padding: 8px 14px;
   }
+  .topic-chips .badge {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+  }
+
+  .sticky-card {
+    position: relative;
+    top: 0;
+    margin-top: 14px;
+  }
+
+  .reply-box {
+    flex-direction: column;
+  }
+  .reply-box .form-control {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}
+
+/* subtle animations */
+.topic-chip,
+.btn-primary-ghost,
+.question-card {
+  will-change: transform;
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+/* accessibility */
+.topic-chip:focus,
+.btn-primary-ghost:focus,
+.question-card:focus {
+  outline: 2px solid rgba(92,1,1,0.12);
+  outline-offset: 2px;
 }

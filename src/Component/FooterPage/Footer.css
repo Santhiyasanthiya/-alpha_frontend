@@ -1,59 +1,70 @@
-.medi_foot_footer {
-  color: white;
-  background: url("https://i.pinimg.com/originals/10/8f/45/108f45667a1697f88b70acbdd2d263ab.jpg");
+.medi_foot_pg_footer {
+  background: url("https://t3.ftcdn.net/jpg/14/75/01/48/360_F_1475014844_0oUMiZ0M9F6UYYKr1UwRnJodLDJpHKRM.jpg");
   background-size: cover;
   background-position: center;
+  color: #fff;
 }
 
-.medi_foot_title {
-  font-size: 1.1rem;
-  line-height: 1.6;
+.medi_foot_pg_footer h5 {
+  margin-bottom: 15px;
 }
 
-.medi_foot_subtitle {
-  color: #ffffff;
+.medi_foot_pg_input {
+  border-radius: 6px;
   font-size: 0.9rem;
 }
 
-.medi_foot_text {
+.medi_foot_pg_btn {
+  font-weight: bold;
+}
+
+.medi_foot_pg_icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  margin: 0 8px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Logo-specific colors */
+.medi_foot_pg_icon.instagram {
+  background: #E1306C; /* Instagram pink */
+}
+
+.medi_foot_pg_icon.youtube {
+  background: #FF0000; /* YouTube red */
+}
+
+.medi_foot_pg_icon.facebook {
+  background: #1877F2; /* Facebook blue */
+}
+
+.medi_foot_pg_icon.linkedin {
+  background: #0A66C2; /* LinkedIn blue */
+}
+
+/* Hover effect */
+.medi_foot_pg_icon:hover {
+  transform: scale(1.1);
+  opacity: 0.85;
+}
+
+
+.medi_foot_pg_copy {
+  color: #ffffff;
   font-size: 0.85rem;
-  color: #ffffff;
 }
 
-.medi_foot_head {
-  margin-bottom: 12px;
-  color: #ffffff;
-}
-
-.medi_foot_list li {
-  margin-bottom: 8px;
-}
-
-.medi_foot_link {
-  color: #aaa;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.medi_foot_link:hover {
-  color: #ffb400;
-}
-
-.medi_foot_copy {
-  color: #ffffff;
-}
-
-/* Responsive Adjustments */
+/* Responsive */
 @media (max-width: 768px) {
-  .medi_foot_about {
+  .medi_foot_pg_address,
+  .medi_foot_pg_contact,
+  .medi_foot_pg_map {
     text-align: center;
-  }
-
-  .medi_foot_col {
-    text-align: center;
-  }
-
-  .medi_foot_copy {
-    font-size: 0.8rem;
   }
 }

@@ -25,12 +25,12 @@ const CodingCareer = () => {
         </p>
 
         <div className="medi_join_btn_group d-flex flex-wrap justify-content-center">
-          <button
+          {/* <button
             className="medi_join_btn_primary m-2"
             onClick={handleJoinClick}
           >
             → Join Now - Free Forever
-          </button>
+          </button> */}
 
           <button
             className="medi_join_btn_secondary m-2"
