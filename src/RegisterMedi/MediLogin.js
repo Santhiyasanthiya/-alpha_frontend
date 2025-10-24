@@ -43,7 +43,7 @@ const MediLogin = () => {
           toast.success(res.data.message);
 
           // Navigate to guidelines after login
-          navigate("/guidelines_page");
+          navigate("/dashboard");
         }
       } catch (err) {
         if (err.response?.data?.message) {

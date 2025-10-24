@@ -7,10 +7,10 @@ const HomeProfessionals = () => {
       <div className="container">
         {/* Title */}
         <h2 className="medi_proff_title mb-3">
-          Trusted by Medical Coding Professionals
+          Trusted by Healthcare Professionals
         </h2>
         <p className="medi_proff_subtitle mb-5">
-          Join thousands of professionals who trust Alphaignen for their coding education
+          Join thousands of professionals who trust Alphaignen for their RCM education.
         </p>
 
         {/* Stats Row */}

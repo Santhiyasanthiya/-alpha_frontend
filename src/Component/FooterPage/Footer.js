@@ -46,12 +46,18 @@ const Footer = () => {
         <div className="row gy-4">
           {/* Address Section */}
           <div className="col-lg-4 col-md-6 medi_foot_pg_address">
-            <h5 className="fw-bold">AlphainGen Medical Coding Center</h5>
+            <h4 className="fw-bold">Alphaingen Medical Coding and Billing Center</h4>
             <p>
-              123, Main Road,
+            13C, Mosque Street,
+
               <br />
-              Chennai, Tamil Nadu - 600001
+          M.G. Nagar, Tharamani,
+
             </p>
+
+<p>Chennai, Tamil Nadu 600113</p>
+
+<hr/>
             <p>Email: info@alphaingen.com</p>
             <p>Phone: +91 98765 43210</p>
           </div>
@@ -141,22 +147,20 @@ const Footer = () => {
 
         {/* Social Media */}
         <div className="text-center">
-          <a href="#" className="medi_foot_pg_icon instagram">
+          <a href="https://www.instagram.com/alphaingen_mcbc" target="_blank" className="medi_foot_pg_icon instagram">
             <i className="bi bi-instagram"></i>
           </a>
-          <a href="#" className="medi_foot_pg_icon youtube">
+          <a href="https://www.youtube.com/@alphaingenmcbc" target="_blank"   className="medi_foot_pg_icon youtube">
             <i className="bi bi-youtube"></i>
           </a>
-          <a href="#" className="medi_foot_pg_icon facebook">
-            <i className="bi bi-facebook"></i>
-          </a>
-          <a href="#" className="medi_foot_pg_icon linkedin">
+       
+          <a href="https://www.linkedin.com/company/alphaingen-medical-coding-and-billing-center/" target="_blank"   className="medi_foot_pg_icon linkedin">
             <i className="bi bi-linkedin"></i>
           </a>
         </div>
 
         <div className="text-center small mt-3 medi_foot_pg_copy">
-          © 2024 AlphainGen. All rights reserved.
+      @ 2025 Alphaingen Medical Coding and Billing Center. All rights reserved.
         </div>
       </div>
 

@@ -1,129 +1,181 @@
+/* ===========================
+   HEADER MAIN STYLING
+=========================== */
 .medi_head_header {
-  background-color: #e6e6e694;
+  background-color: rgba(105, 104, 104, 0.274);
   position: sticky;
   top: 0;
-  height: 75px;
-  z-index: 1000;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-.medi_head_logoimg {
-  width: 140px;
-  height: 60px;
-  margin-top: -7px;
-  margin-left: 20px;
+  z-index: 1050;
+  transition: all 0.3s ease-in-out;
 }
 
-.medi_head_link {
-  text-decoration: none;
-  color: #300000;
-  font-weight: 500;
-  padding: 20px;
-  font-family: "Times New Roman", Times, serif;
-  font-weight: 800;
-  font-size: 18px;
+.medi_head_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===========================
+   LOGO STYLING
+=========================== */
+.medi_head_logoimg {
+  height: 55px;
+  width: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.medi_head_logoimg:hover {
+  transform: scale(1.05);
+}
+
+/* ===========================
+   DESKTOP MENU & USER
+=========================== */
+.medi_head_user {
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
   transition: color 0.3s ease;
 }
 
+.medi_head_user:hover {
+  color: #f39c12;
+}
+
+.medi_head_inlog {
+  background: linear-gradient(90deg, #f39c12, #ffba33);
+  color: white;
+  padding: 6px 18px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.medi_head_inlog:hover {
+  background: linear-gradient(90deg, #ffba33, #f39c12);
+  transform: scale(1.05);
+  color: #fff;
+}
+
+/* ===========================
+   MOBILE MENU BUTTON
+=========================== */
 .medi_head_menu_btn {
-  background: none;
+  background: transparent;
   border: none;
   font-size: 28px;
   cursor: pointer;
+  color: #333;
+  transition: transform 0.2s ease, color 0.3s ease;
 }
-.medi_head_inlog{
-  text-decoration: none;
-  color: #300000;
-  font-weight: 500;
-  padding: 10px 20px;
-  font-family: "Times New Roman", Times, serif;
-  font-weight: 600;
-  font-size: 18px;
-  border-radius: 8px;
-text-shadow: 0px 0px 3px #1a0000;
 
+.medi_head_menu_btn:hover {
+  color: #f39c12;
+  transform: scale(1.2);
 }
+
+/* ===========================
+   MOBILE NAVIGATION
+=========================== */
 .medi_head_mobile_nav {
- background-color: rgb(255, 192, 192);
-  font-size: 20px;
-  width: 200px;
-  margin-top: 10px;
-  margin-left: 190px;
-  align-items: center;
-  padding: 10px;
-  z-index: 999;
+  background: #fff;
+  border-top: 2px solid #eee;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  animation: slideDown 0.4s ease-in-out;
+}
 
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.medi_head_logout_text{
-  cursor: pointer;
-  color: #ff4d4f;
-  font-weight: bold;
-}
+
 .medi_head_link_about {
+  color: #333;
   text-decoration: none;
-  color: rgb(44, 1, 1);
-  font-weight: 500;
-  padding: 10px;
-  font-family: "Times New Roman", Times, serif;
   font-weight: 600;
-  font-size: 18px;
-  transition: color 0.3s ease;
-
-}
-/* Username styling */
-.medi_head_user {
-  color: #470101;
-  font-size: 1rem;
+  display: block;
+  transition: all 0.3s ease;
 }
 
-/* Logout icon (mobile) */
-.medi_head_logout_icon {
-   border: 1px solid #ccc;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
+.medi_head_link_about:hover {
+  color: #f39c12;
+  background: #fff4e0;
 }
 
-.medi_head_logout_icon:hover {
-  transform: scale(1.1);
-}
-.medi_head_user {
-  color: #470101;
-  font-size: 1rem;
-}
-
-/* Logout icon (mobile only) */
-.medi_head_logout_icon {
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
+/* ===========================
+   LOGOUT STYLING
+=========================== */
+.medi_head_logout_text {
+  display: inline-block;
+  font-weight: 600;
+  color: #ff4d4f;
+  transition: all 0.3s ease;
 }
 
-.medi_head_logout_icon:hover {
-  transform: scale(1.1);
+.medi_head_logout_text:hover {
+  text-decoration: underline;
+  color: #d9363e;
 }
-/* Small screens: 330px to 767px */
-@media (max-width: 767px) {
+
+/* ===========================
+   RESPONSIVENESS
+=========================== */
+
+/* For medium devices (tablets) */
+@media (max-width: 992px) {
+  .medi_head_logoimg {
+    height: 48px;
+  }
+
+  .medi_head_inlog {
+    padding: 5px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* For small devices (mobile) */
+@media (max-width: 768px) {
   .medi_head_container {
-    display: flex;
-    justify-content: space-between; /* logo left, username+menu right */
-    align-items: center;
-    padding: 10px 15px;
+    padding: 0.5rem 1rem;
+  }
+
+  .medi_head_logoimg {
+    height: 45px;
+  }
+
+  .medi_head_user {
+    font-size: 0.95rem;
+  }
+
+  .medi_head_mobile_nav {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .medi_head_link_about {
+    padding: 10px 0;
+    font-size: 1rem;
+  }
+}
+
+/* For extra small devices (very small phones) */
+@media (max-width: 480px) {
+  .medi_head_logoimg {
+    height: 40px;
+  }
+
+  .medi_head_menu_btn {
+    font-size: 24px;
   }
 
   .medi_head_user {
     font-size: 0.9rem;
-    white-space: nowrap;
-  }
-
-  .medi_head_menu_btn {
-    font-size: 28px;
-    cursor: pointer;
-    background: none;
-    border: none;
   }
 }
-

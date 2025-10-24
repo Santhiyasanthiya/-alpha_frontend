@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../Contex/UserContext';
 import './HeaderPage.css'; 
@@ -12,36 +12,64 @@ const HeaderPage = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
   const handleLogout = () => {
-    setUsername(""); 
+    setUsername("");
+    localStorage.removeItem("user");
+    localStorage.removeItem("zuppaToken");
+    localStorage.removeItem("username");
     closeMenu();
     navigate("/");
   };
+
+  // ✅ handle logo click based on login
+  const handleLogoClick = () => {
+    closeMenu();
+    if (username) {
+      navigate("/dashboard");
+    } else {
+      navigate("/");
+    }
+  };
+
+  // Scroll shadow effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.querySelector('.medi_head_header');
+      if (window.scrollY > 10) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <header className="medi_head_header shadow-sm">
       <div className="container-fluid medi_head_container d-flex justify-content-between align-items-center py-2 px-3">
         
-        {/* Logo */}
-        <div className="medi_head_logo">
-          <Link to="/" onClick={closeMenu}>
-            <img 
-              src="https://res.cloudinary.com/dmv2tjzo7/image/upload/v1746264888/dsi64irjwtabuwhbnand.png" 
-              alt="Logo" 
-              className="medi_head_logoimg" 
-            />
-          </Link>
+        {/* ✅ Logo Click Conditional Navigation */}
+        <div className="medi_head_logo" onClick={handleLogoClick} style={{ cursor: "pointer" }}>
+          <img 
+            src="https://res.cloudinary.com/dmv2tjzo7/image/upload/v1746264888/dsi64irjwtabuwhbnand.png" 
+            alt="Logo" 
+            className="medi_head_logoimg" 
+          />
         </div>
 
-        {/* Desktop view */}
+        {/* Desktop View */}
         {username ? (
-          <div className="d-flex  d-none d-md-flex">
-            <span className="medi_head_user fw-bold" onClick={() => navigate("/signin")}>{username}</span>
+          <div className="d-flex d-none d-md-flex align-items-center">
+            <span
+              className="medi_head_user fw-bold"
+              onClick={() => navigate("/dashboard")}
+              style={{ cursor: "pointer" }}
+            >
+              {username}
+            </span>
             <img
               src="https://res.cloudinary.com/dk50cmtps/image/upload/v1758538923/logout_4034229_sstdnl.png"
               alt="Logout"
               className="cursor-pointer"
               onClick={handleLogout}
-              style={{ width: "28px", height: "28px", marginLeft: "15px",}}
+              style={{ width: "28px", height: "28px", marginLeft: "15px" }}
             />
           </div>
         ) : (
@@ -50,16 +78,14 @@ const HeaderPage = () => {
           </Link>
         )}
 
-        {/* Mobile view username on right */}
-       <div className="d-flex d-md-none align-items-center gap-2">
-  {username && (
-    <span className="medi_head_user fw-bold">{username}</span>
-  )}
-  <button className="medi_head_menu_btn" onClick={toggleMenu}>☰</button>
-</div>
+        {/* Mobile View */}
+        <div className="d-flex d-md-none align-items-center gap-2">
+          {username && <span className="medi_head_user fw-bold">{username}</span>}
+          <button className="medi_head_menu_btn" onClick={toggleMenu}>☰</button>
+        </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="medi_head_mobile_nav d-md-none text-center py-2">
           <Link 
@@ -70,8 +96,7 @@ const HeaderPage = () => {
             About
           </Link>
 
-          {/* Only Logout text on mobile menu */}
-          {username && (
+          {username ? (
             <div className="mt-2">
               <span
                 className="medi_head_logout_text"
@@ -81,9 +106,7 @@ const HeaderPage = () => {
                 Logout
               </span>
             </div>
-          )}
-          
-          {!username && (
+          ) : (
             <Link 
               to="/alpha_register" 
               className="medi_head_link_about d-block py-1"

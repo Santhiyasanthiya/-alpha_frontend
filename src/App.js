@@ -26,7 +26,7 @@ const App = () => {
 
   
         <Route path="/login" element={<MediLogin />} />
-        <Route path="/signin" element={<Register />} />
+        <Route path="/dashboard" element={<Register />} />
         <Route path="/about_page" element={<About />} />
         <Route path="/ask_question" element={<AskQuestion />} />
         <Route path="/community" element={<JoinDiscussion />} />

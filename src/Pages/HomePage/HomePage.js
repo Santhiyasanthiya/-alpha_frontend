@@ -30,8 +30,8 @@ const HomePage = () => {
 
   
         <p className="medi_home_pg_subtitle mx-auto mb-4">
-          Your comprehensive platform for medical coding education, community
-          discussions, and the latest industry updates. Join thousands of coding
+          Your comprehensive platform for medical coding and billing education, community
+          discussions, and the latest industry updates. Join thousands of coding and billing
           professionals advancing their careers.
         </p>
 
@@ -46,6 +46,13 @@ const HomePage = () => {
           <a href="/about_page" className="medi_home_pg_button_two">
             Learn More
           </a>
+              <button
+            onClick={handleGetStarted}
+            className="medi_home_pg_button_one"
+          >
+          Install App
+          
+          </button>
         </div>
       </div>
     </section>

@@ -8,30 +8,30 @@ const HomeCardPage = () => {
     {
       icon: "❓",
       title: "Q&A Community",
-      text: "Get answers to your medical coding questions from experienced professionals and enhance your skills.",
+      text: "Get answers to your RCM  questions from experienced professionals and enhance your skills.",
       description:
-        "Our Q&A community helps you connect directly with experts in medical coding. You can post your doubts, learn best practices, and gain real-world insights that will help you in your career.",
+        "Our Q&A community helps you connect directly with experts in RCM. You can post your doubts, learn best practices, and gain real-world insights that will help you in your career.",
     },
     {
       icon: "📖",
       title: "Comprehensive Guidelines",
-      text: "Access up-to-date ICD-10, CPT, and DRG coding guidelines and standards.",
+      text: "Access up-to-date ICD-10, CPT, DRG coding and Billing guidelines and standards.",
       description:
-        "We provide comprehensive resources including ICD-10, CPT, and DRG coding standards. You will always be updated with the latest industry changes, ensuring compliance and accuracy in your work.",
+        "We provide comprehensive resources including ICD-10, CPT, DRG coding and Billing guidelines and standards. You will always be updated with the latest industry changes, ensuring compliance and accuracy in your work.",
     },
     {
       icon: "📈",
       title: "Industry News",
-      text: "Stay informed with the latest developments in medical coding.",
+      text: "Stay informed with the latest Informations on medical coding and billing trends.",
       description:
         "Get daily/weekly updates about industry trends, policy changes, and new coding techniques. Stay ahead of the competition with our reliable news sources.",
     },
     {
       icon: "👥",
       title: "Professional Community",
-      text: "Connect with fellow coders, share experiences, and learn from experts.",
+      text: "Connect with fellow coders and billers, share experiences, and learn from experts.",
       description:
-        "Be a part of a professional network where you can exchange knowledge, attend webinars, and collaborate with peers to grow your expertise in medical coding.",
+        "Be a part of a professional network where you can exchange knowledge, attend webinars, and collaborate with peers to grow your expertise in RCM .",
     },
   ];
 
@@ -40,7 +40,7 @@ const HomeCardPage = () => {
       <div className="container text-center">
         {/* Title */}
         <h2 className="medi-card_pg_title mb-3">
-          Everything You Need for Medical Coding Success
+          Everything You Need for Medical Coding and Billing Success
         </h2>
 
         {/* Cards */}

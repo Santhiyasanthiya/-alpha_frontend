@@ -17,7 +17,7 @@ const CodingCareer = () => {
     <div className="medi_join_section d-flex align-items-center justify-content-center text-center">
       <div className="container">
         <h2 className="medi_join_title">
-          Ready to Advance Your Medical Coding Career?
+          Ready to Advance Your Medical Coding & Billing Career?
         </h2>
         <p className="medi_join_subtitle">
           Join our community today and gain access to expert knowledge,

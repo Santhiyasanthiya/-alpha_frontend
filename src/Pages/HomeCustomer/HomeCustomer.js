@@ -33,7 +33,7 @@ const HomeCustomer = () => {
         <div className="text-center mb-5">
           <h2 className="medi_customer_title">What Our Community Says</h2>
           <p className="medi_customer_subtitle">
-            Hear from medical coding professionals who trust our platform
+            Hear from Healthcare professionals who trust our platform
           </p>
         </div>
 

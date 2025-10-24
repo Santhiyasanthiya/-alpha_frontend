@@ -125,7 +125,7 @@ const AskQuestion = () => {
       {/* Header */}
       <div className="premium-hero d-flex flex-column flex-md-row align-items-center justify-content-between p-4 rounded-4 shadow-sm">
         <div className="hero-left">
-          <h1 className="hero-title mb-1">Medical Coding Community</h1>
+          <h1 className="hero-title mb-1">Medical Coding and Billing Community</h1>
           <p className="hero-subtext mb-2">
             Ask, learn, and share best practices — fast answers from peers & experts.
           </p>
