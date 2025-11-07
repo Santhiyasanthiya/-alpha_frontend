@@ -38,12 +38,9 @@
   transition: color 0.3s ease;
 }
 
-.medi_head_user:hover {
-  color: #f39c12;
-}
 
 .medi_head_inlog {
-  background: linear-gradient(90deg, #f39c12, #ffba33);
+  background: linear-gradient(90deg, #630202, #3a0101);
   color: white;
   padding: 6px 18px;
   border-radius: 25px;
@@ -52,11 +49,6 @@
   transition: all 0.3s ease-in-out;
 }
 
-.medi_head_inlog:hover {
-  background: linear-gradient(90deg, #ffba33, #f39c12);
-  transform: scale(1.05);
-  color: #fff;
-}
 
 /* ===========================
    MOBILE MENU BUTTON
@@ -75,9 +67,7 @@
   transform: scale(1.2);
 }
 
-/* ===========================
-   MOBILE NAVIGATION
-=========================== */
+
 .medi_head_mobile_nav {
   background: #fff;
   border-top: 2px solid #eee;
@@ -109,9 +99,6 @@
   background: #fff4e0;
 }
 
-/* ===========================
-   LOGOUT STYLING
-=========================== */
 .medi_head_logout_text {
   display: inline-block;
   font-weight: 600;
@@ -124,11 +111,7 @@
   color: #d9363e;
 }
 
-/* ===========================
-   RESPONSIVENESS
-=========================== */
 
-/* For medium devices (tablets) */
 @media (max-width: 992px) {
   .medi_head_logoimg {
     height: 48px;

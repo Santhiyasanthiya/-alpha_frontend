@@ -54,7 +54,7 @@ const HeaderPage = () => {
           />
         </div>
 
-        {/* Desktop View */}
+     
         {username ? (
           <div className="d-flex d-none d-md-flex align-items-center">
             <span
@@ -73,7 +73,7 @@ const HeaderPage = () => {
             />
           </div>
         ) : (
-          <Link to="/alpha_register" className="d-none d-md-block medi_head_inlog">
+          <Link to="/login" className="d-none d-md-block medi_head_inlog">
             Sign In
           </Link>
         )}
@@ -108,7 +108,7 @@ const HeaderPage = () => {
             </div>
           ) : (
             <Link 
-              to="/alpha_register" 
+              to="/login" 
               className="medi_head_link_about d-block py-1"
               onClick={closeMenu}
             >
